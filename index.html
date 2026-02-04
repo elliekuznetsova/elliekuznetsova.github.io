@@ -180,39 +180,50 @@
       }
     });
   }
-<script>
     
+<!-- Tabs JS and PDF rendering -->
 <script>
-  // Tabs
+  // 1. Tab functionality
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
+
+      // Remove active from all tabs and contents
       tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
       contents.forEach(c => c.classList.remove('active'));
+
+      // Add active to clicked tab and corresponding content
+      tab.classList.add('active');
       document.getElementById(target).classList.add('active');
     });
   });
 
-  // PDF.js rendering
-  const url = 'Resume_Ellie_Kuznetsova.pdf';
+  // 2. PDF.js rendering
+  const pdfUrl = 'Resume_Ellie_Kuznetsova.pdf';
   const container = document.getElementById('pdf-container');
-  const loadingTask = pdfjsLib.getDocument(url);
-  loadingTask.promise.then(pdf => {
-    for(let i=1; i<=pdf.numPages; i++){
-      pdf.getPage(i).then(page=>{
-        const viewport = page.getViewport({scale:1.2});
-        const canvas = document.createElement('canvas');
-        container.appendChild(canvas);
-        const context = canvas.getContext('2d');
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        page.render({canvasContext: context, viewport: viewport});
-      });
-    }
-  });
+
+  if (typeof pdfjsLib !== 'undefined') {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.worker.min.js';
+    const loadingTask = pdfjsLib.getDocument(pdfUrl);
+
+    loadingTask.promise.then(pdf => {
+      for (let i = 1; i <= pdf.numPages; i++) {
+        pdf.getPage(i).then(page => {
+          const viewport = page.getViewport({ scale: 1.2 });
+          const canvas = document.createElement('canvas');
+          container.appendChild(canvas);
+          const context = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          page.render({ canvasContext: context, viewport: viewport });
+        });
+      }
+    });
+  }
 </script>
+
 </body>
 </html>
