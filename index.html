@@ -133,16 +133,26 @@
   <h2>Research Experience</h2>
   <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
-    <li>Develop evaluation pipelines for code-switched minimal pairs</li>
-    <li>Design coding schemes and annotation guidelines</li>
-    <li>Evaluate XLM-RoBERTa on Spanish–English data</li>
-    <li>Visualize embeddings with t-SNE</li>
+    <li>Develop an end-to-end evaluation pipeline for code-switched minimal pairs to assess LLM (Microsoft Copilot) grammar knowledge.</li>
+    <li>Design and implement coding schemes and annotation guidelines for human judgment tasks.</li>
+    <li>Evaluate the XLM-RoBERTa language model on Spanish-English code-switched data and compare predictions against human judgments.</li>
+    <li>Create analysis scripts for small-scale code-switched corpora and conduct error analysis of model outputs.</li>
+    <li>Compare contextual multilingual embeddings using FastText Multilingual and visualize representations with t-SNE.</li>
+    <li>Investigate utterance length reduction in repeated reference tasks within a dialogue corpus.</li>
   </ul>
   <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
-    <li>Train XLSR acoustic models</li>
-    <li>Analyze ASR outputs and errors</li>
-    <li>Build letter-to-phone mappings</li>
+    <li>Train XLSR acoustic model for speech recognition in low-resource language settings.</li>
+    <li>Fine-tune and evaluate acoustic model for speech recognition.</li>
+    <li>Compare model outputs against human-transcriptions and analyze error patterns.</li>
+    <li>Gained theoretical knowledge and hands-on familiarity with building and optimizing pynini-based letter-to-phone mappings.</li>
+  </ul>
+  <h3>Principal Investigator (Independent) — UC San Diego & Northern Arizona University | Apr 2022 – Oct 2025</h3>
+  <ul>
+    <li>Designed and directed the end-to-end research process, including study design, project timeline coordination, task delegation, and team leadership.</li>
+    <li>Built a Writing Feedback Corpus (WFC), intended for open-access public release.</li>
+    <li>Annotated the corpus, co-transcribed, and coded the data set, completed uncoded portions, and cross-checked the RA work for accuracy.</li>
+    <li>Created figures/visualizations for the methods section and authored the introduction, literature review, methods, and references; contributed ideas, citations, and prose to the discussion, conclusion, and limitations sections.</li>
   </ul>
 </div>
 
@@ -162,62 +172,79 @@
   <ul>
     <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
     <li><strong>NLP:</strong> Hugging Face, fastText, text2vec, LLM evaluation</li>
-    <li><strong>ML:</strong> Embeddings, t-SNE, pretrained models</li>
+    <li><strong>ML:</strong> Embeddings, t-SNE, pretrained models, model evaluation</li>
+    <li><strong>Statistics:</strong> SPSS, RStudio, Tableau, Microsoft Office</li>
     <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
     <li><strong>Languages:</strong> Russian, English, French, ASL</li>
   </ul>
 </div>
 
-<!-- CV Tab -->
+<!-- Resume Tab -->
 <div id="cv" class="tab-content">
   <h2>Curriculum Vitae</h2>
 
-  <!-- PDF Viewer -->
-  <div id="pdf-container"></div>
+  <!-- Basics Section -->
+  <section class="cv-section">
+    <h3>Basics</h3>
+    <table>
+      <tr><td><strong>Name</strong></td><td>Elizaveta “Ellie” Kuznetsova</td></tr>
+      <tr><td><strong>Label</strong></td><td>M.S. Student</td></tr>
+      <tr><td><strong>Email</strong></td><td><a href="mailto:ye.s.kuznetsova@gmail.com">ye.s.kuznetsova@gmail.com</a></td></tr>
+      <tr><td><strong>Website</strong></td><td><a href="https://ellieshka.github.io/">https://ellieshka.github.io/</a></td></tr>
+      <tr><td><strong>Summary</strong></td><td>PhD student in Computational Social Science, interested in bilingualism, NLP, and corpus linguistics.</td></tr>
+    </table>
+  </section>
 
-  <!-- Download Link -->
-  <p><a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Download CV</a></p>
+  <!-- Work Section -->
+  <section class="cv-section">
+    <h3>Work</h3>
+
+    <div class="cv-item">
+      <div class="cv-date">2025.09 – Present</div>
+      <div class="cv-role"><strong>Graduate Student Researcher</strong></div>
+      <div class="cv-org">Bilingualism in Context Lab, UC San Diego</div>
+      <p>Develop pipelines for code-switched minimal pairs; analyze embeddings with t-SNE; design annotation guidelines.</p>
+      <ul>
+        <li>Code-switched minimal pairs evaluation</li>
+        <li>Multilingual embeddings analysis</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-date">2025.09 – Present</div>
+      <div class="cv-role"><strong>Graduate Student Researcher</strong></div>
+      <div class="cv-org">Phonetics Lab, UC San Diego</div>
+      <p>Train XLSR acoustic models; analyze ASR outputs; optimize letter-to-phone mappings.</p>
+      <ul>
+        <li>Low-resource speech recognition</li>
+        <li>ASR evaluation</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-date">2022.04 – 2025.10</div>
+      <div class="cv-role"><strong>Principal Investigator (Independent)</strong></div>
+      <div class="cv-org">UC San Diego & Northern Arizona University</div>
+      <p>Directed research projects and built datasets.</p>
+      <ul>
+        <li>Writing Feedback Corpus (WFC)</li>
+        <li>Manuscript authoring</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="cv-section">
+    <h3>Education</h3>
+    <ul>
+      <li><strong>UC San Diego</strong> — M.S. Computational Social Science, Expected 2026</li>
+      <li><strong>Northern Arizona University</strong> — M.A. Applied Linguistics & TESL, 2023</li>
+      <li><strong>Pushkin Leningrad State University</strong> — B.A. Linguistics, 2019</li>
+    </ul>
+  </section>
 </div>
 
-<!-- Tabs & PDF.js Script -->
-<script>
-  // Tabs functionality
-  const tabs = document.querySelectorAll('.tab');
-  const contents = document.querySelectorAll('.tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-
-  // PDF.js rendering
-  const pdfUrl = 'Resume_Ellie_Kuznetsova.pdf';
-  const container = document.getElementById('pdf-container');
-
-  if (typeof pdfjsLib !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.worker.min.js';
-    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-
-    loadingTask.promise.then(pdf => {
-      for (let i = 1; i <= pdf.numPages; i++) {
-        pdf.getPage(i).then(page => {
-          const viewport = page.getViewport({ scale: 1.2 });
-          const canvas = document.createElement('canvas');
-          container.appendChild(canvas);
-          const context = canvas.getContext('2d');
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          page.render({ canvasContext: context, viewport: viewport });
-        });
-      }
-    });
-  }
 </script>
-
+  
 </body>
 </html>
