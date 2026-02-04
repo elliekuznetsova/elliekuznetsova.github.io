@@ -1,2 +1,3 @@
 # ellieshka.github.io
-Personal Website
+Personal website, CV, and resume for Elizaveta (Ellie) Kuznetsova.
+Built with GitHub Pages and Jekyll.
