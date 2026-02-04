@@ -95,7 +95,7 @@ B.A. Linguistics (Translation & Interpretation), *July 2019*
 - National Honor Award, Society for Collegiate Leadership & Achievement (2022)
 - Sigma Tau Delta English Honor Award (2022)
 
-<iframe src="https://github.com/Ellieshka/ellieshka.github.io/website/docs/Resume_Ellie_Kuznetsova.pdf?raw=true" 
+<iframe src="Resume_Ellie_Kuznetsova.pdf?raw=true" 
         width="100%" height="800px">
 </iframe>
 
