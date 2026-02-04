@@ -1,146 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Elizaveta “Ellie” Kuznetsova</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* Base styles */
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #111;
-      background: #fff;
-    }
+<meta charset="UTF-8">
+<title>Elizaveta “Ellie” Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* Base styles */
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #111;
+    background: #fff;
+  }
+  a { color: #1a73e8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1,h2,h3 { margin: 0.5em 0; }
+  ul { margin-left: 1.5em; }
 
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
+  /* Topbar */
+  .topbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 200;
+  }
+  .social-icons a { margin-right: 15px; font-size: 20px; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  /* Tabs */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #ddd;
+    margin: 0 20px;
+    overflow-x: auto;
+    position: sticky;
+    top: 60px; /* below topbar */
+    background: #fff;
+    z-index: 150;
+  }
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 5px;
+    font-weight: 500;
+    background: #f9f9f9;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  .tab.active {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-bottom: 0;
+  }
 
-    h1, h2, h3 {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-    }
+  /* Tab content */
+  .tab-content { display: none; max-width: 900px; margin: 20px auto; padding: 20px; border: 2px solid #ddd; border-top: 0; border-radius: 0 0 10px 10px; background: #fff; }
+  .tab-content.active { display: block; }
 
-    ul {
-      margin-left: 1.5em;
-    }
+  /* About section */
+  .about { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px; }
+  .about-text { flex: 1 1 500px; }
+  .about-img { flex: 0 0 40%; max-width: 400px; border-radius: 10px; object-fit: cover; }
 
-    /* Top bar with social icons */
-    .topbar {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 10px 40px;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      background: #fff;
-      z-index: 100;
-    }
+  /* PDF */
+  #pdf-container { width: 100%; height: 600px; border: 1px solid #ccc; margin-top: 20px; overflow: auto; }
 
-    .social-icons a {
-      margin-right: 15px;
-      font-size: 20px;
-    }
-
-    /* Tabs */
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      border-bottom: 2px solid #ddd;
-      margin: 0 20px;
-      overflow-x: auto;
-      position: relative; 
-      z-index: 101;
-    }
-
-    .tab {
-      padding: 10px 20px;
-      cursor: pointer;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      margin-right: 5px;
-      font-weight: 500;
-      background: #f9f9f9;
-      transition: background 0.3s;
-      white-space: nowrap;
-    }
-
-    .tab.active {
-      background: #fff;
-      border: 2px solid #ddd;
-      border-bottom: 0;
-    }
-
-    .tab-content {
-      display: none;
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 2px solid #ddd;
-      border-top: 0;
-      border-radius: 0 0 10px 10px;
-      background: #fff;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* About section */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .about-text {
-      flex: 1 1 500px;
-    }
-
-    .about-img {
-      flex: 0 0 40%;
-      max-width: 400px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    /* PDF container */
-    #pdf-container {
-      width: 100%;
-      height: 600px;
-      border: 1px solid #ccc;
-      overflow: auto;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 700px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-img {
-        width: 80%;
-        max-width: 250px;
-      }
-    }
-  </style>
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  @media (max-width: 700px) {
+    .about { flex-direction: column; align-items: center; }
+    .about-img { width: 80%; max-width: 250px; }
+  }
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 </head>
 <body>
 
-<!-- Top bar -->
+<!-- Topbar -->
 <div class="topbar">
   <div class="social-icons">
     <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -168,13 +112,12 @@
     <div class="about-text">
       <h1>Elizaveta “Ellie” Kuznetsova</h1>
       <p><strong>M.S. Computational Social Science, UC San Diego (Expected June 2026)</strong></p>
-      <p>I am a graduate student researcher at UC San Diego working at the intersection of <strong>bilingualism, phonetics, and natural language processing</strong>. My research combines corpus linguistics, experimental methods, and machine learning to study multilingual language use and evaluation.</p>
+      <p>I am a graduate student researcher at UC San Diego working at the intersection of <strong>bilingualism, phonetics, and NLP</strong>.</p>
       <h3>Affiliations</h3>
       <ul>
         <li><strong>Bilingualism in Context Lab</strong> (PI: Anne Beatty-Martinez)</li>
         <li><strong>Phonetics Lab</strong> (PI: Mark Simmons; Faculty Advisor: Will Styler)</li>
       </ul>
-      <p>My work includes evaluation of multilingual LLMs, code-switched corpora, low-resource ASR, and dialogue-based reference tasks.</p>
     </div>
     <img src="photo.jpeg" alt="Ellie Kuznetsova" class="about-img">
   </div>
@@ -182,69 +125,27 @@
 
 <div id="research" class="tab-content">
   <h2>Research Experience</h2>
-  <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
-  <ul>
-    <li>Develop end-to-end evaluation pipelines for code-switched minimal pairs</li>
-    <li>Design coding schemes and annotation guidelines for human judgment tasks</li>
-    <li>Evaluate XLM-RoBERTa on Spanish–English code-switched data</li>
-    <li>Compare multilingual embeddings (FastText) and visualize representations with t-SNE</li>
-    <li>Analyze utterance length reduction in repeated reference tasks</li>
-  </ul>
-  <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
-  <ul>
-    <li>Train and fine-tune XLSR acoustic models for low-resource speech recognition</li>
-    <li>Evaluate ASR outputs against human transcriptions</li>
-    <li>Analyze systematic error patterns</li>
-    <li>Build and optimize Pynini-based letter-to-phone mappings</li>
-  </ul>
-  <h3>Principal Investigator (Independent) — UC San Diego & Northern Arizona University | Apr 2022 – Oct 2025</h3>
-  <ul>
-    <li>Directed end-to-end research projects and coordinated research teams</li>
-    <li>Built and annotated the Writing Feedback Corpus (WFC)</li>
-    <li>Authored major sections of peer-reviewed manuscripts</li>
-  </ul>
+  <p>Research content here...</p>
 </div>
 
 <div id="education" class="tab-content">
   <h2>Education</h2>
-  <ul>
-    <li><strong>University of California, San Diego</strong> — M.S. Computational Social Science, Expected June 2026</li>
-    <li><strong>Northern Arizona University</strong> — M.A. Applied Linguistics & TESL, May 2023</li>
-    <li><strong>Pushkin Leningrad State University</strong> — B.A. Linguistics (Translation & Interpretation), July 2019</li>
-  </ul>
+  <p>Education content here...</p>
 </div>
 
 <div id="skills" class="tab-content">
   <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
-    <li><strong>NLP:</strong> Hugging Face Transformers, fastText, text2vec, LLM evaluation</li>
-    <li><strong>ML:</strong> Pretrained models, embeddings, dimensionality reduction (t-SNE)</li>
-    <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
-    <li><strong>Languages:</strong> Russian (native), English (native-like), French (upper-intermediate), ASL (basic)</li>
-  </ul>
+  <p>Skills content here...</p>
 </div>
 
 <div id="publications" class="tab-content">
   <h2>Publications</h2>
-  <h3>Under Review</h3>
-  <ul>
-    <li>Kuznetsova, E., et al. Higher- and lower-order concerns in instructor comments. <em>Applied Corpus Linguistics</em></li>
-    <li>Eckstein, G., et al. Feedback modality and student–instructor rapport. <em>CALICO Journal</em></li>
-  </ul>
-  <h3>Published</h3>
-  <ul>
-    <li>Kuznetsova, E., & Wald, M. (2024). Corpus Corner: LANA-CASE Corpus. <em>CATESOL Newsletter</em></li>
-  </ul>
+  <p>Publications content here...</p>
 </div>
 
 <div id="awards" class="tab-content">
   <h2>Awards</h2>
-  <ul>
-    <li>Computational Social Science Excellence Award, UC San Diego (2025)</li>
-    <li>National Honor Award, Society for Collegiate Leadership & Achievement (2022)</li>
-    <li>Sigma Tau Delta English Honor Award (2022)</li>
-  </ul>
+  <p>Awards content here...</p>
 </div>
 
 <div id="cv" class="tab-content">
@@ -253,31 +154,10 @@
   <p><a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Download CV</a></p>
 </div>
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 <script>
-  // PDF.js rendering
-  const url = 'Resume_Ellie_Kuznetsova.pdf';
-  const container = document.getElementById('pdf-container');
-  const loadingTask = pdfjsLib.getDocument(url);
-  loadingTask.promise.then(pdf => {
-    for(let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-      pdf.getPage(pageNum).then(page => {
-        const viewport = page.getViewport({scale: 1.2});
-        const canvas = document.createElement('canvas');
-        container.appendChild(canvas);
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        page.render({canvasContext: context, viewport: viewport});
-      });
-    }
-  });
-
-  // Tabs JS
+  // Tabs
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
-
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
@@ -287,7 +167,24 @@
       document.getElementById(target).classList.add('active');
     });
   });
-</script>
 
+  // PDF.js rendering
+  const url = 'Resume_Ellie_Kuznetsova.pdf';
+  const container = document.getElementById('pdf-container');
+  const loadingTask = pdfjsLib.getDocument(url);
+  loadingTask.promise.then(pdf => {
+    for(let i=1; i<=pdf.numPages; i++){
+      pdf.getPage(i).then(page=>{
+        const viewport = page.getViewport({scale:1.2});
+        const canvas = document.createElement('canvas');
+        container.appendChild(canvas);
+        const context = canvas.getContext('2d');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        page.render({canvasContext: context, viewport: viewport});
+      });
+    }
+  });
+</script>
 </body>
 </html>
