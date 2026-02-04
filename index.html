@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +7,6 @@
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 
 <style>
   /* Base styles */
@@ -180,11 +179,11 @@
 </div>
 
 <!-- Resume Tab -->
-<div id="cv" class="tab-content">
+<div id="resume" class="tab-content">
   <h2>Curriculum Vitae</h2>
 
   <!-- Basics Section -->
-  <section class="cv-section">
+  <section class="resume-section">
     <h3>Basics</h3>
     <table>
       <tr><td><strong>Name</strong></td><td>Elizaveta “Ellie” Kuznetsova</td></tr>
@@ -196,13 +195,13 @@
   </section>
 
   <!-- Work Section -->
-  <section class="cv-section">
+  <section class="resume-section">
     <h3>Work</h3>
 
-    <div class="cv-item">
-      <div class="cv-date">2025.09 – Present</div>
-      <div class="cv-role"><strong>Graduate Student Researcher</strong></div>
-      <div class="cv-org">Bilingualism in Context Lab, UC San Diego</div>
+    <div class="resume-item">
+      <div class="resume-date">2025.09 – Present</div>
+      <div class="resume-role"><strong>Graduate Student Researcher</strong></div>
+      <div class="resume-org">Bilingualism in Context Lab, UC San Diego</div>
       <p>Develop pipelines for code-switched minimal pairs; analyze embeddings with t-SNE; design annotation guidelines.</p>
       <ul>
         <li>Code-switched minimal pairs evaluation</li>
@@ -210,10 +209,10 @@
       </ul>
     </div>
 
-    <div class="cv-item">
-      <div class="cv-date">2025.09 – Present</div>
-      <div class="cv-role"><strong>Graduate Student Researcher</strong></div>
-      <div class="cv-org">Phonetics Lab, UC San Diego</div>
+    <div class="resume-item">
+      <div class="resume-date">2025.09 – Present</div>
+      <div class="resume-role"><strong>Graduate Student Researcher</strong></div>
+      <div class="resume-org">Phonetics Lab, UC San Diego</div>
       <p>Train XLSR acoustic models; analyze ASR outputs; optimize letter-to-phone mappings.</p>
       <ul>
         <li>Low-resource speech recognition</li>
@@ -221,10 +220,10 @@
       </ul>
     </div>
 
-    <div class="cv-item">
-      <div class="cv-date">2022.04 – 2025.10</div>
-      <div class="cv-role"><strong>Principal Investigator (Independent)</strong></div>
-      <div class="cv-org">UC San Diego & Northern Arizona University</div>
+    <div class="resume-item">
+      <div class="resume-date">2022.04 – 2025.10</div>
+      <div class="resume-role"><strong>Principal Investigator (Independent)</strong></div>
+      <div class="resume-org">UC San Diego & Northern Arizona University</div>
       <p>Directed research projects and built datasets.</p>
       <ul>
         <li>Writing Feedback Corpus (WFC)</li>
@@ -244,6 +243,20 @@
   </section>
 </div>
 
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      contents.forEach(c => c.classList.remove('active'));
+      const activeContent = document.getElementById(tab.dataset.tab);
+      if (activeContent) activeContent.classList.add('active');
+    });
+  });
 </script>
   
 </body>
