@@ -3,53 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <title>Elizaveta “Ellie” Kuznetsova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* Reset and base */
     body {
-      font-family: sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      color: #111;
+      scroll-behavior: smooth;
+      background: #fff;
     }
 
-    /* Tabs container */
-    .tabs {
-      display: flex;
-      border-bottom: 2px solid #ccc;
-      margin-bottom: 1em;
+    a {
+      color: #1a73e8;
+      text-decoration: none;
     }
 
-    .tab {
-      padding: 0.6em 1.2em;
-      margin-right: 0.5em;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-bottom: none;
-      background: #f7f7f7;
-      border-radius: 5px 5px 0 0;
-    }
-
-    .tab.active {
-      background: white;
-      font-weight: bold;
-    }
-
-    .tabcontent {
-      display: none;
-      border: 1px solid #ccc;
-      border-radius: 0 5px 5px 5px;
-      padding: 20px;
-      background: white;
+    a:hover {
+      text-decoration: underline;
     }
 
     h1, h2, h3 {
-      margin-top: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     ul {
-      margin: 0.5em 0 1em 1.5em;
+      margin-left: 1.5em;
     }
 
+    /* Top navigation bar */
+    .topnav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 20px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .nav-links a.active {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    /* Main content */
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+    }
+
+    .about-img {
+      flex: 0 0 200px;
+      max-width: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* CV PDF */
     #pdf-container {
       width: 100%;
       height: 800px;
@@ -62,50 +101,71 @@
       display: block;
       margin: 0 auto 10px auto;
     }
+
+    /* Section headings */
+    section h2 {
+      margin-top: 0.5em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    @media (max-width: 700px) {
+      .about {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-img {
+        width: 150px;
+        height: auto;
+      }
+    }
   </style>
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<h1>Elizaveta “Ellie” Kuznetsova</h1>
-<p>M.S. Computational Social Science, UC San Diego (Expected June 2026)</p>
-<p>📍 San Diego, CA | 📧 ye.s.kuznetsova@gmail.com</p>
-
-<!-- Tabs -->
-<div class="tabs">
-  <div class="tab active" data-tab="home">Home</div>
-  <div class="tab" data-tab="cv">CV</div>
-  <div class="tab" data-tab="research">Research Experience</div>
-  <div class="tab" data-tab="education">Education</div>
-  <div class="tab" data-tab="skills">Skills</div>
-  <div class="tab" data-tab="publications">Publications</div>
-  <div class="tab" data-tab="awards">Awards</div>
+<!-- Top navigation -->
+<div class="topnav">
+  <div class="social-icons">
+    <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fas fa-rss"></i></a>
+  </div>
+  <div class="nav-links">
+    <a href="#about" class="active">About</a>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+    <a href="#cv">CV</a>
+  </div>
 </div>
 
-<!-- Tab contents -->
+<!-- About Section -->
+<section id="about" class="section about">
+  <div class="about-text">
+    <h1>Elizaveta “Ellie” Kuznetsova</h1>
+    <p><strong>M.S. Computational Social Science, UC San Diego (Expected June 2026)</strong></p>
+    <p>I am a graduate student researcher at UC San Diego working at the intersection of <strong>bilingualism, phonetics, and natural language processing</strong>. My research combines corpus linguistics, experimental methods, and machine learning to study multilingual language use and evaluation.</p>
+    <h3>Affiliations</h3>
+    <ul>
+      <li><strong>Bilingualism in Context Lab</strong> (PI: Anne Beatty-Martinez)</li>
+      <li><strong>Phonetics Lab</strong> (PI: Mark Simmons; Faculty Advisor: Will Styler)</li>
+    </ul>
+    <p>My work includes evaluation of multilingual LLMs, code-switched corpora, low-resource ASR, and dialogue-based reference tasks.</p>
+  </div>
+  <img src="your-photo.jpg" alt="Ellie Kuznetsova" class="about-img">
+</section>
 
-<div id="home" class="tabcontent" style="display:block;">
-  <h2>About Me</h2>
-  <p>I am a graduate student researcher at UC San Diego working at the intersection of <strong>bilingualism, phonetics, and natural language processing</strong>. My research combines corpus linguistics, experimental methods, and machine learning to study multilingual language use and evaluation.</p>
-
-  <h3>Affiliations</h3>
-  <ul>
-    <li><strong>Bilingualism in Context Lab</strong> (PI: Anne Beatty-Martinez)</li>
-    <li><strong>Phonetics Lab</strong> (PI: Mark Simmons; Faculty Advisor: Will Styler)</li>
-  </ul>
-
-  <p>My work includes evaluation of multilingual LLMs, code-switched corpora, low-resource ASR, and dialogue-based reference tasks.</p>
-</div>
-
-<div id="cv" class="tabcontent">
-  <h2>My CV (PDF)</h2>
-  <div id="pdf-container"></div>
-  <p><a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Download CV</a></p>
-</div>
-
-<div id="research" class="tabcontent">
+<!-- Research Section -->
+<section id="research" class="section">
   <h2>Research Experience</h2>
 
-  <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego (PI: Anne Beatty-Martinez) | Sep 2025 – Present</h3>
+  <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
     <li>Develop end-to-end evaluation pipelines for code-switched minimal pairs to assess LLM grammatical knowledge</li>
     <li>Design coding schemes and annotation guidelines for human judgment tasks</li>
@@ -114,7 +174,7 @@
     <li>Analyze utterance length reduction in repeated reference tasks</li>
   </ul>
 
-  <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego (PI: Mark Simmons; Advisor: Will Styler) | Sep 2025 – Present</h3>
+  <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
     <li>Train and fine-tune XLSR acoustic models for low-resource speech recognition</li>
     <li>Evaluate ASR outputs against human transcriptions</li>
@@ -128,18 +188,20 @@
     <li>Built and annotated the Writing Feedback Corpus (WFC)</li>
     <li>Authored major sections of peer-reviewed manuscripts</li>
   </ul>
-</div>
+</section>
 
-<div id="education" class="tabcontent">
+<!-- Education Section -->
+<section id="education" class="section">
   <h2>Education</h2>
   <ul>
     <li><strong>University of California, San Diego</strong> — M.S. Computational Social Science, Expected June 2026</li>
     <li><strong>Northern Arizona University</strong> — M.A. Applied Linguistics & TESL, May 2023</li>
     <li><strong>Pushkin Leningrad State University</strong> — B.A. Linguistics (Translation & Interpretation), July 2019</li>
   </ul>
-</div>
+</section>
 
-<div id="skills" class="tabcontent">
+<!-- Skills Section -->
+<section id="skills" class="section">
   <h2>Skills</h2>
   <ul>
     <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
@@ -148,9 +210,10 @@
     <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
     <li><strong>Languages:</strong> Russian (native), English (native-like), French (upper-intermediate), ASL (basic)</li>
   </ul>
-</div>
+</section>
 
-<div id="publications" class="tabcontent">
+<!-- Publications Section -->
+<section id="publications" class="section">
   <h2>Publications</h2>
   <h3>Under Review</h3>
   <ul>
@@ -161,20 +224,29 @@
   <ul>
     <li>Kuznetsova, E., & Wald, M. (2024). Corpus Corner: LANA-CASE Corpus. <em>CATESOL Newsletter</em></li>
   </ul>
-</div>
+</section>
 
-<div id="awards" class="tabcontent">
+<!-- Awards Section -->
+<section id="awards" class="section">
   <h2>Awards</h2>
   <ul>
     <li>Computational Social Science Excellence Award, UC San Diego (2025)</li>
     <li>National Honor Award, Society for Collegiate Leadership & Achievement (2022)</li>
     <li>Sigma Tau Delta English Honor Award (2022)</li>
   </ul>
-</div>
+</section>
 
+<!-- CV Section -->
+<section id="cv" class="section">
+  <h2>CV</h2>
+  <div id="pdf-container"></div>
+  <p><a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Download CV</a></p>
+</section>
+
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 <script>
-  // PDF.js embedding
+  // PDF.js
   const url = 'Resume_Ellie_Kuznetsova.pdf';
   const container = document.getElementById('pdf-container');
   const loadingTask = pdfjsLib.getDocument(url);
@@ -187,23 +259,28 @@
         const context = canvas.getContext('2d');
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-        const renderContext = { canvasContext: context, viewport: viewport };
-        page.render(renderContext);
+        page.render({canvasContext: context, viewport: viewport});
       });
     }
   });
 
-  // Tab functionality
-  const tabs = document.querySelectorAll(".tab");
-  const contents = document.querySelectorAll(".tabcontent");
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a');
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      contents.forEach(c => c.style.display = "none");
-
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab).style.display = "block";
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 60;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
     });
   });
 </script>
