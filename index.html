@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Elizaveta “Ellie” Kuznetsova</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
+
 <style>
   /* Base styles */
   body {
@@ -63,7 +68,16 @@
   }
 
   /* Tab content */
-  .tab-content { display: none; max-width: 900px; margin: 20px auto; padding: 20px; border: 2px solid #ddd; border-top: 0; border-radius: 0 0 10px 10px; background: #fff; }
+  .tab-content {
+    display: none;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+  }
   .tab-content.active { display: block; }
 
   /* About section */
@@ -71,7 +85,7 @@
   .about-text { flex: 1 1 500px; }
   .about-img { flex: 0 0 40%; max-width: 400px; border-radius: 10px; object-fit: cover; }
 
-  /* PDF */
+  /* PDF container */
   #pdf-container { width: 100%; height: 600px; border: 1px solid #ccc; margin-top: 20px; overflow: auto; }
 
   @media (max-width: 700px) {
@@ -79,9 +93,8 @@
     .about-img { width: 80%; max-width: 250px; }
   }
 </style>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 </head>
+
 <body>
 
 <!-- Topbar -->
@@ -104,104 +117,85 @@
   <div class="tab" data-tab="cv">CV</div>
 </div>
 
-<!-- Tab contents -->
+<!-- About Tab -->
 <div id="about" class="tab-content active">
   <div class="about">
     <div class="about-text">
       <h1>Elizaveta “Ellie” Kuznetsova</h1>
-      <p>I’m currently an M.S. student in Computational Social Science at UC San Diego, where I get to combine my love for language, data, and understanding how people communicate. Before starting this program, I spent several years teaching languages and working closely with multilingual learners. Along the way, I discovered my interests in building datasets, data analyses, and exploring how quantitative methods can reveal patterns in human language, which led me to computational work. These days, I’m especially excited about anything that brings language and technology together. My interests include <strong>bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition</strong>.</p>
+      <p>I’m currently an M.S. student in Computational Social Science at UC San Diego. My research combines bilingualism, code-switching, NLP, corpus linguistics, and experimental work.</p>
     </div>
     <img src="photo.jpeg" alt="Ellie Kuznetsova" class="about-img">
   </div>
 </div>
 
+<!-- Research Tab -->
 <div id="research" class="tab-content">
   <h2>Research Experience</h2>
-  <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3> 
-  <ul> <li>Develop end-to-end evaluation pipelines for code-switched minimal pairs</li> 
-    <li>Design coding schemes and annotation guidelines for human judgment tasks</li> 
-    <li>Evaluate XLM-RoBERTa on Spanish–English code-switched data</li> 
-    <li>Compare multilingual embeddings (FastText) and visualize representations with t-SNE</li> <li>Analyze utterance length reduction in repeated reference tasks</li> </ul> 
-    <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3> <ul> <li>Train and fine-tune XLSR acoustic models for low-resource speech recognition</li> 
-    <li>Evaluate ASR outputs against human transcriptions</li> <li>Analyze systematic error patterns</li> <li>Build and optimize Pynini-based letter-to-phone mappings</li> </ul> 
-    <h3>Principal Investigator (Independent) — UC San Diego & Northern Arizona University | Apr 2022 – Oct 2025</h3> <ul> 
-    <li>Directed end-to-end research projects and coordinated research teams</li> 
-    <li>Built and annotated the Writing Feedback Corpus (WFC)</li> 
-    <li>Authored major sections of peer-reviewed manuscripts</li> </ul>
+  <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
+  <ul>
+    <li>Develop evaluation pipelines for code-switched minimal pairs</li>
+    <li>Design coding schemes and annotation guidelines</li>
+    <li>Evaluate XLM-RoBERTa on Spanish–English data</li>
+    <li>Visualize embeddings with t-SNE</li>
+  </ul>
+  <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
+  <ul>
+    <li>Train XLSR acoustic models</li>
+    <li>Analyze ASR outputs and errors</li>
+    <li>Build letter-to-phone mappings</li>
+  </ul>
 </div>
 
+<!-- Education Tab -->
 <div id="education" class="tab-content">
   <h2>Education</h2>
-<ul> <li><strong>University of California, San Diego</strong> — M.S. Computational Social Science, Expected June 2026</li> 
-  <li><strong>Northern Arizona University</strong> — M.A. Applied Linguistics & TESL, May 2023</li> 
-  <li><strong>Pushkin Leningrad State University</strong> — B.A. Linguistics (Translation & Interpretation), July 2019</li> </ul>
+  <ul>
+    <li><strong>University of California, San Diego</strong> — M.S. Computational Social Science, Expected June 2026</li>
+    <li><strong>Northern Arizona University</strong> — M.A. Applied Linguistics & TESL, May 2023</li>
+    <li><strong>Pushkin Leningrad State University</strong> — B.A. Linguistics (Translation & Interpretation), July 2019</li>
+  </ul>
 </div>
 
+<!-- Skills Tab -->
 <div id="skills" class="tab-content">
-<h2>Skills</h2> 
-  <ul> <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li> 
-  <li><strong>NLP:</strong> Hugging Face Transformers, fastText, text2vec, LLM evaluation</li> 
-    <li><strong>ML:</strong> Pretrained models, embeddings, dimensionality reduction (t-SNE)</li> 
-    <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li> 
-  <li><strong>Languages:</strong> Russian (native), English (native-like), French (upper-intermediate), ASL (basic)</li> </ul>
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
+    <li><strong>NLP:</strong> Hugging Face, fastText, text2vec, LLM evaluation</li>
+    <li><strong>ML:</strong> Embeddings, t-SNE, pretrained models</li>
+    <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
+    <li><strong>Languages:</strong> Russian, English, French, ASL</li>
+  </ul>
 </div>
 
-<!-- CV Tab Content -->
+<!-- CV Tab -->
 <div id="cv" class="tab-content">
   <h2>Curriculum Vitae</h2>
 
-  <!-- PDF viewer container -->
-  <div id="pdf-container" style="width: 100%; height: 600px; border: 1px solid #ccc; overflow: auto; margin-top: 20px;"></div>
+  <!-- PDF Viewer -->
+  <div id="pdf-container"></div>
 
-  <!-- Download link -->
+  <!-- Download Link -->
   <p><a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Download CV</a></p>
 </div>
 
-<!-- PDF.js script (place this once in your page, after including PDF.js library) -->
+<!-- Tabs & PDF.js Script -->
 <script>
-  const pdfUrl = 'Resume_Ellie_Kuznetsova.pdf';
-  const container = document.getElementById('pdf-container');
-
-  if (typeof pdfjsLib !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.worker.min.js';
-
-    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-    loadingTask.promise.then(pdf => {
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then(page => {
-          const viewport = page.getViewport({ scale: 1.2 });
-          const canvas = document.createElement('canvas');
-          container.appendChild(canvas);
-          const context = canvas.getContext('2d');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-          page.render({ canvasContext: context, viewport: viewport });
-        });
-      }
-    });
-  }
-    
-<!-- Tabs JS and PDF rendering -->
-<script>
-  // 1. Tab functionality
+  // Tabs functionality
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
-
-      // Remove active from all tabs and contents
       tabs.forEach(t => t.classList.remove('active'));
       contents.forEach(c => c.classList.remove('active'));
-
-      // Add active to clicked tab and corresponding content
       tab.classList.add('active');
       document.getElementById(target).classList.add('active');
     });
   });
 
-  // 2. PDF.js rendering
+  // PDF.js rendering
   const pdfUrl = 'Resume_Ellie_Kuznetsova.pdf';
   const container = document.getElementById('pdf-container');
 
