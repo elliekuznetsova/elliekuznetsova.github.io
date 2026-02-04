@@ -106,10 +106,10 @@
     }
 
     .about-img {
-    flex: 0 0 40%;
-    max-width: 400px;
-    border-radius: 10px;
-    object-fit: cover;
+      flex: 0 0 40%;
+      max-width: 400px;
+      border-radius: 10px;
+      object-fit: cover;
     }
 
     /* PDF container */
@@ -161,7 +161,6 @@
 </div>
 
 <!-- Tab contents -->
-
 <div id="about" class="tab-content active">
   <div class="about">
     <div class="about-text">
@@ -181,7 +180,6 @@
 
 <div id="research" class="tab-content">
   <h2>Research Experience</h2>
-
   <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
     <li>Develop end-to-end evaluation pipelines for code-switched minimal pairs</li>
@@ -190,7 +188,6 @@
     <li>Compare multilingual embeddings (FastText) and visualize representations with t-SNE</li>
     <li>Analyze utterance length reduction in repeated reference tasks</li>
   </ul>
-
   <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
   <ul>
     <li>Train and fine-tune XLSR acoustic models for low-resource speech recognition</li>
@@ -198,7 +195,6 @@
     <li>Analyze systematic error patterns</li>
     <li>Build and optimize Pynini-based letter-to-phone mappings</li>
   </ul>
-
   <h3>Principal Investigator (Independent) — UC San Diego & Northern Arizona University | Apr 2022 – Oct 2025</h3>
   <ul>
     <li>Directed end-to-end research projects and coordinated research teams</li>
@@ -258,7 +254,7 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.239/pdf.min.js"></script>
 <script>
-  // PDF.js
+  // PDF.js rendering
   const url = 'Resume_Ellie_Kuznetsova.pdf';
   const container = document.getElementById('pdf-container');
   const loadingTask = pdfjsLib.getDocument(url);
@@ -283,10 +279,8 @@
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
-
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-
       contents.forEach(c => c.classList.remove('active'));
       document.getElementById(target).classList.add('active');
     });
