@@ -1,0 +1,15 @@
+title: Ellie Kuznetsova
+email: ye.s.kuznetsova@gmail.com
+description: >-
+Computational Social Science MSc student at UC San Diego. Research in bilingualism, phonetics, and NLP.
+baseurl: ""
+url: "https://ellieshka.github.io"
+
+
+markdown: kramdown
+theme: minima
+
+
+header_pages:
+- index.md
+- cv.md
