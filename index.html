@@ -25,7 +25,8 @@
     color: #111;
     background: #fff;
   }
-  a { color: #1a73e8; text-decoration: none; }
+  a {color: inherit;
+  text-decoration: none;}
   a:hover { text-decoration: underline; }
   h1,h2,h3 { margin: 0.5em 0; }
   ul { margin-left: 1.5em; }
@@ -124,7 +125,7 @@
   <div class="tab active" data-tab="about">About</div>
   <div class="tab" data-tab="research">Research</div>
   <div class="tab" data-tab="skills">Skills</div>
-  <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab-link">
+  <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab">
   Resume
 </a>
 </div>
@@ -180,12 +181,9 @@
     <li><strong>Languages:</strong> Russian, English, French, ASL</li>
   </ul>
 </div>
-
-  
-</section>
   
 <script>
-  const tabs = document.querySelectorAll('.tab');
+  const tabs = document.querySelectorAll('.tab[data-tab]');
   const contents = document.querySelectorAll('.tab-content');
 
   tabs.forEach(tab => {
