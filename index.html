@@ -4,99 +4,9 @@
 <meta charset="UTF-8">
 <title>Elizaveta “Ellie” Kuznetsova</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-/* ====== Typography ====== */
-body {
-  font-family: "Merriweather", Georgia, serif;
-  background: #fafafa;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  line-height: 1.75;
-}
-
-h1, h2, h3 {
-  font-weight: 700;
-  color: #111;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #0366d6;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* ====== Layout ====== */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Sidebar */
-.sidebar {
-  margin-bottom: 40px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 30px;
-}
-
-.sidebar img {
-  width: 180px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-}
-
-.sidebar .name {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.sidebar .title {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.contacts a {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-/* Desktop two-column layout */
-@media (min-width: 900px) {
-  .container {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    column-gap: 40px;
-  }
-
-  .sidebar {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-right: 1px solid #ddd;
-    padding-right: 40px;
-  }
-}
-
-/* Section spacing */
-section {
-  margin-bottom: 60px;
-}
-</style>
 </head>
 
 <body>
@@ -112,56 +22,25 @@ section {
       <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
       <a href="https://github.com/Ellieshka"><i class="fa-brands fa-github"></i> GitHub</a>
       <a href="https://www.linkedin.com/in/ellieshka/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank"><i class="fa-solid fa-file"></i> CV</a>
     </div>
   </div>
 
-  <!-- Main content -->
+  <!-- Main -->
   <div class="main">
 
-    <section id="about">
+    <nav class="navbar">
+      <a href="index.html" class="active">About</a>
+      <a href="research.html">Research</a>
+      <a href="skills.html">Skills</a>
+      <a href="cv.html">CV</a>
+    </nav>
+
+    <section>
       <h2>About me</h2>
       <p>I’m an M.S. student in Computational Social Science at UC San Diego, combining my interests in language, data, and human communication. My research focuses on bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition.</p>
     </section>
 
-    <section id="research">
-      <h2>Research Experience</h2>
-
-      <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
-      <ul>
-        <li>Develop evaluation pipelines for code-switched data.</li>
-        <li>Evaluate multilingual models against human judgments.</li>
-        <li>Perform corpus-based analysis and error diagnostics.</li>
-      </ul>
-
-      <h3>Graduate Student Researcher — Phonetics Lab, UC San Diego | Sep 2025 – Present</h3>
-      <ul>
-        <li>Train XLSR acoustic model for low-resource speech recognition.</li>
-        <li>Fine-tune and evaluate model performance.</li>
-        <li>Compare outputs against human transcriptions.</li>
-      </ul>
-
-      <h3>Principal Investigator (Independent) — UC San Diego & Northern Arizona University | Apr 2022 – Oct 2025</h3>
-      <ul>
-        <li>Designed and directed end-to-end research projects.</li>
-        <li>Built and annotated a Writing Feedback Corpus (WFC) for public release.</li>
-        <li>Created figures, authored methods, literature review, and discussion sections.</li>
-      </ul>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
-        <li><strong>Machine Learning / NLP:</strong> Hugging Face, fastText, embeddings, evaluation</li>
-        <li><strong>Statistics:</strong> RStudio, SPSS, Tableau</li>
-        <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
-        <li><strong>Languages:</strong> Russian, English, French, ASL</li>
-      </ul>
-    </section>
-
   </div>
 </div>
-
 </body>
 </html>
