@@ -22,7 +22,7 @@ body {
   line-height: 1.75;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-weight: 700;
   color: #111;
   margin-top: 2rem;
@@ -44,9 +44,8 @@ a:hover {
   padding: 40px 20px;
 }
 
-/* ====== Sidebar ====== */
+/* Sidebar */
 .sidebar {
-  position: static !important;
   margin-bottom: 40px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 30px;
@@ -76,7 +75,7 @@ a:hover {
   font-size: 14px;
 }
 
-/* ====== Desktop two-column layout ====== */
+/* Desktop two-column layout */
 @media (min-width: 900px) {
   .container {
     display: grid;
@@ -93,32 +92,9 @@ a:hover {
   }
 }
 
-/* ====== Navigation Tabs ====== */
-.tabs {
-  display: flex;
-  gap: 25px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-}
-
-.tab {
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.tab.active {
-  border-bottom: 2px solid #111;
-  padding-bottom: 8px;
-}
-
-/* ====== Content ====== */
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
+/* Section spacing */
+section {
+  margin-bottom: 60px;
 }
 </style>
 </head>
@@ -126,39 +102,29 @@ a:hover {
 <body>
 <div class="container">
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <img src="photo.jpeg" alt="Ellie Kuznetsova">
-  <div class="name">Elizaveta “Ellie” Kuznetsova</div>
-  <div class="title">M.S. in Computational Social Science, UC San Diego</div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="photo.jpeg" alt="Ellie Kuznetsova">
+    <div class="name">Elizaveta “Ellie” Kuznetsova</div>
+    <div class="title">M.S. in Computational Social Science, UC San Diego</div>
 
-  <div class="contacts">
-    <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
-    <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-    <a href="https://github.com/Ellieshka"><i class="fa-brands fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/ellieshka/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <div class="contacts">
+      <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://github.com/Ellieshka"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/ellieshka/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank"><i class="fa-solid fa-file"></i> CV</a>
+    </div>
   </div>
-</div>
 
   <!-- Main content -->
   <div class="main">
 
-    <!-- Top Navigation -->
-    <nav class="tabs">
-      <div class="tab active" data-tab="about">About</div>
-      <div class="tab" data-tab="research">Research</div>
-      <div class="tab" data-tab="skills">Skills</div>
-      <a class="tab" href="Resume_Ellie_Kuznetsova.pdf" target="_blank">CV</a>
-    </nav>
-
-    <!-- About -->
-    <div id="about" class="tab-content active">
+    <section id="about">
       <h2>About me</h2>
-      <p>I’m an M.S. student in Computational Social Science at UC San Diego, combining my interests in language, data, and human communication. My research focuses on bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition.You can reach me at ekuznetsova at ucsd dot edu. Some of my work can also be found on my <a href="https://github.com/Ellieshka" target="_blank">GitHub</a>.</p>
-    </div>
+      <p>I’m an M.S. student in Computational Social Science at UC San Diego, combining my interests in language, data, and human communication. My research focuses on bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition.</p>
+    </section>
 
-    <!-- Research -->
-    <div id="research" class="tab-content">
+    <section id="research">
       <h2>Research Experience</h2>
 
       <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
@@ -181,10 +147,9 @@ a:hover {
         <li>Built and annotated a Writing Feedback Corpus (WFC) for public release.</li>
         <li>Created figures, authored methods, literature review, and discussion sections.</li>
       </ul>
-    </div>
+    </section>
 
-    <!-- Skills -->
-    <div id="skills" class="tab-content">
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
         <li><strong>Programming:</strong> Python, R, SQL, LaTeX</li>
@@ -193,26 +158,10 @@ a:hover {
         <li><strong>Experimental Tools:</strong> Praat, ELAN, Qualtrics, ACLEW</li>
         <li><strong>Languages:</strong> Russian, English, French, ASL</li>
       </ul>
-    </div>
+    </section>
 
   </div>
 </div>
-
-<script>
-const tabs = document.querySelectorAll('.tab[data-tab]');
-const contents = document.querySelectorAll('.tab-content');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-
-    contents.forEach(c => c.classList.remove('active'));
-    const activeContent = document.getElementById(tab.dataset.tab);
-    if (activeContent) activeContent.classList.add('active');
-  });
-});
-</script>
 
 </body>
 </html>
