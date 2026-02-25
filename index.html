@@ -23,7 +23,6 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Merriweather", Georgia, serif;
   font-weight: 700;
   color: #111;
   margin-top: 2rem;
@@ -40,28 +39,26 @@ a:hover {
 
 /* ====== Layout ====== */
 .container {
-  display: flex;
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* ====== Sidebar (AcademicPages style) ====== */
+/* ====== Sidebar ====== */
 .sidebar {
-  width: 260px;
-  flex-shrink: 0;
-  padding-right: 40px;
-  border-right: 1px solid #ddd;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
 }
 
 .sidebar img {
-  width: 100%;
+  width: 180px;
   border-radius: 6px;
   margin-bottom: 20px;
 }
 
 .sidebar .name {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -78,13 +75,24 @@ a:hover {
   font-size: 14px;
 }
 
-/* ====== Main content ====== */
-.main {
-  flex: 1;
-  padding-left: 40px;
+/* ====== Desktop two-column layout ====== */
+@media (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    column-gap: 40px;
+  }
+
+  .sidebar {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-right: 1px solid #ddd;
+    padding-right: 40px;
+  }
 }
 
-/* ====== Navigation Tabs (AcademicPages style) ====== */
+/* ====== Navigation Tabs ====== */
 .tabs {
   display: flex;
   gap: 25px;
@@ -110,23 +118,6 @@ a:hover {
 }
 .tab-content.active {
   display: block;
-}
-
-/* ====== Responsive ====== */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-  .main {
-    padding-left: 0;
-  }
 }
 </style>
 </head>
