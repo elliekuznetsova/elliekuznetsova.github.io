@@ -30,6 +30,20 @@
   h1,h2,h3 { margin: 0.5em 0; }
   ul { margin-left: 1.5em; }
 
+  .tab-link {
+  padding: 10px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  background: #f9f9f9;
+  transition: background 0.3s;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+  
   /* Topbar */
   .topbar {
     display: flex;
@@ -110,7 +124,7 @@
   <div class="tab active" data-tab="about">About</div>
   <div class="tab" data-tab="research">Research</div>
   <div class="tab" data-tab="skills">Skills</div>
-  <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab">
+  <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab-link">
   Resume
 </a>
 </div>
