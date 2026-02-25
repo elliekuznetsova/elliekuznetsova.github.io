@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Font Awesome -->
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 /* ===== Base ===== */
@@ -17,7 +16,7 @@ body {
   padding: 0;
   background: #fff;
   color: #111;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 a {
@@ -31,63 +30,62 @@ a:hover {
 
 ul {
   margin-left: 20px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 19px;
-}
-
-h3 {
-  font-size: 15px;
-  margin-top: 20px;
-  font-weight: 600;
+  padding-left: 0;
 }
 
 /* ===== Layout ===== */
 .container {
   display: flex;
-  align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
   gap: 60px;
 }
 
-/* ===== Sidebar (sticky, left) ===== */
+/* ===== Sidebar ===== */
 .sidebar {
   width: 260px;
   flex-shrink: 0;
   position: sticky;
   top: 40px;
-  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sidebar img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 50%;
   margin-bottom: 20px;
 }
 
 .name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 14px;
   margin-bottom: 15px;
+  color: #555;
 }
 
 .contacts a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 14px;
+  color: #111;
 }
 
 /* ===== Main content ===== */
 .main {
   flex: 1;
-  max-width: 900px;
 }
 
-/* Tabs as inline links */
+/* ===== Tabs ===== */
 .tabs {
   display: flex;
   gap: 20px;
@@ -98,8 +96,8 @@ h3 {
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
-  text-decoration: none;
   color: #111;
+  text-decoration: none;
 }
 
 .tab:hover {
@@ -111,7 +109,7 @@ h3 {
   text-decoration: underline;
 }
 
-/* Tab content */
+/* ===== Tab content ===== */
 .tab-content {
   display: none;
 }
@@ -120,7 +118,19 @@ h3 {
   display: block;
 }
 
-/* Responsive */
+/* ===== Headers ===== */
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -130,19 +140,24 @@ h3 {
     position: relative;
     top: auto;
     margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  .contacts a {
+    justify-content: center;
   }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-  <!-- LEFT SIDEBAR (always visible) -->
+  <!-- Sidebar -->
   <div class="sidebar">
     <img src="photo.jpeg" alt="Ellie Kuznetsova">
     <div class="name">Elizaveta “Ellie” Kuznetsova</div>
+    <div class="title">M.S. in Computational Social Science, UC San Diego</div>
 
     <div class="contacts">
       <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
@@ -151,7 +166,7 @@ h3 {
     </div>
   </div>
 
-  <!-- RIGHT CONTENT (tabs + content) -->
+  <!-- Main content -->
   <div class="main">
     <div class="tabs">
       <div class="tab active" data-tab="about">About</div>
@@ -161,18 +176,12 @@ h3 {
     </div>
 
     <div id="about" class="tab-content active">
-      <h2>About</h2>
-      <p>
-        I’m an M.S. student in Computational Social Science at UC San Diego,
-        combining my interests in language, data, and human communication.
-        My research focuses on bilingualism, code-switching, natural language processing,
-        corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition.
-      </p>
+      <h2>About me</h2>
+      <p>I’m an M.S. student in Computational Social Science at UC San Diego, combining my interests in language, data, and human communication. My research focuses on bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition.</p>
     </div>
 
     <div id="research" class="tab-content">
       <h2>Research Experience</h2>
-
       <h3>Graduate Student Researcher — Bilingualism in Context Lab, UC San Diego | Sep 2025 – Present</h3>
       <ul>
         <li>Develop evaluation pipelines for code-switched data.</li>
@@ -205,7 +214,6 @@ h3 {
         <li><strong>Languages:</strong> Russian, English, French, ASL</li>
       </ul>
     </div>
-
   </div>
 </div>
 
