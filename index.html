@@ -10,17 +10,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
 
-/* ===== Base Layout ===== */
+/* ===== Base ===== */
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.7;
-  color: #111;
+  margin: 0;
+  padding: 40px;
   background: #fff;
-  font-size: 16.5px;
+  color: #111;
+  line-height: 1.7;
 }
 
 a {
@@ -32,44 +30,52 @@ a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+/* ===== Layout ===== */
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 60px;
 }
 
-h2 {
-  font-size: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+/* ===== Sidebar (ALWAYS visible) ===== */
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
 }
 
-h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-ul {
-  margin-left: 20px;
-}
-
-/* ===== Social Icons ===== */
-
-.topbar {
+.sidebar img {
+  width: 100%;
+  border-radius: 6px;
   margin-bottom: 20px;
 }
 
-.social-icons a {
-  margin-right: 15px;
-  font-size: 18px;
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* ===== Tabs ===== */
+.contacts a {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* ===== Main Content ===== */
+
+.main {
+  flex: 1;
+}
+
+/* Tabs */
 
 .tabs {
   display: flex;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .tab {
@@ -78,7 +84,6 @@ ul {
   cursor: pointer;
   background: #f7f7f7;
   border-radius: 4px 4px 0 0;
-  font-weight: 500;
   font-size: 14.5px;
 }
 
@@ -88,41 +93,37 @@ ul {
   border-bottom: none;
 }
 
-/* ===== Content ===== */
-
 .tab-content {
   display: none;
-  padding-top: 10px;
 }
 
 .tab-content.active {
   display: block;
 }
 
-/* ===== About Section ===== */
-
-.about {
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
+h2 {
+  margin-top: 0;
+  font-size: 20px;
 }
 
-.about-text {
-  flex: 1;
+h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
-.about-img {
-  width: 200px;
-  border-radius: 6px;
+ul {
+  margin-left: 20px;
 }
 
-@media (max-width: 700px) {
-  .about {
+/* ===== Responsive ===== */
+
+@media (max-width: 900px) {
+  .container {
     flex-direction: column;
   }
-  .about-img {
+  .sidebar {
     width: 100%;
-    max-width: 300px;
   }
 }
 
@@ -131,62 +132,74 @@ ul {
 
 <body>
 
-<div class="topbar">
-  <div class="social-icons">
-    <a href="mailto:ye.s.kuznetsova@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://github.com/Ellieshka"><i class="fa-brands fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/ellieshka/"><i class="fa-brands fa-linkedin"></i></a>
+<div class="container">
+
+  <!-- LEFT SIDEBAR (always visible) -->
+  <div class="sidebar">
+    <img src="photo.jpeg" alt="Ellie Kuznetsova">
+    <div class="name">Elizaveta “Ellie” Kuznetsova</div>
+
+    <div class="contacts">
+      <a href="mailto:ye.s.kuznetsova@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+      <a href="https://github.com/Ellieshka">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/ellieshka/">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
   </div>
-</div>
 
-<div class="tabs">
-  <div class="tab active" data-tab="about">About</div>
-  <div class="tab" data-tab="research">Research</div>
-  <div class="tab" data-tab="skills">Skills</div>
-  <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab">Resume</a>
-</div>
+  <!-- RIGHT CONTENT (tabs switch here) -->
+  <div class="main">
 
-<!-- About -->
-<div id="about" class="tab-content active">
-  <div class="about">
-    <div class="about-text">
-      <h1>Elizaveta “Ellie” Kuznetsova</h1>
+    <div class="tabs">
+      <div class="tab active" data-tab="about">About</div>
+      <div class="tab" data-tab="research">Research</div>
+      <div class="tab" data-tab="skills">Skills</div>
+      <a href="Resume_Ellie_Kuznetsova.pdf" target="_blank" class="tab">Resume</a>
+    </div>
+
+    <div id="about" class="tab-content active">
+      <h2>About</h2>
       <p>
-      I’m currently an M.S. student in Computational Social Science at UC San Diego, combining my interests in language, data, and human communication. My research interests include <strong>bilingualism, code-switching, natural language processing, corpus linguistics, cognitive linguistics, psycholinguistics, and second language acquisition</strong>.
+        I’m an M.S. student in Computational Social Science at UC San Diego,
+        combining interests in language, data, and human communication.
+        My research focuses on bilingualism, code-switching, NLP,
+        corpus linguistics, and psycholinguistics.
       </p>
     </div>
-    <img src="photo.jpeg" alt="Ellie Kuznetsova" class="about-img">
+
+    <div id="research" class="tab-content">
+      <h2>Research Experience</h2>
+
+      <h3>Graduate Student Researcher — UC San Diego | 2025–Present</h3>
+      <ul>
+        <li>Develop evaluation pipelines for code-switched data.</li>
+        <li>Evaluate multilingual models against human judgments.</li>
+        <li>Perform corpus-based analysis and error diagnostics.</li>
+      </ul>
+
+      <h3>Principal Investigator | 2022–2025</h3>
+      <ul>
+        <li>Led end-to-end research projects.</li>
+        <li>Built and annotated a Writing Feedback Corpus.</li>
+      </ul>
+    </div>
+
+    <div id="skills" class="tab-content">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, R, SQL</li>
+        <li><strong>NLP:</strong> Hugging Face, fastText</li>
+        <li><strong>Statistics:</strong> RStudio, SPSS</li>
+        <li><strong>Languages:</strong> Russian, English, French, ASL</li>
+      </ul>
+    </div>
+
   </div>
-</div>
-
-<!-- Research -->
-<div id="research" class="tab-content">
-  <h2>Research Experience</h2>
-
-  <h3>Graduate Student Researcher — UC San Diego | 2025–Present</h3>
-  <ul>
-    <li>Develop evaluation pipelines for code-switched minimal pairs.</li>
-    <li>Evaluate multilingual language models against human judgments.</li>
-    <li>Conduct corpus-based analysis and error diagnostics.</li>
-  </ul>
-
-  <h3>Principal Investigator (Independent) | 2022–2025</h3>
-  <ul>
-    <li>Designed and led end-to-end research projects.</li>
-    <li>Built and annotated a Writing Feedback Corpus (WFC).</li>
-    <li>Authored core sections of research manuscripts.</li>
-  </ul>
-</div>
-
-<!-- Skills -->
-<div id="skills" class="tab-content">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming:</strong> Python, R, SQL</li>
-    <li><strong>NLP:</strong> Hugging Face, fastText, embeddings</li>
-    <li><strong>Statistics:</strong> RStudio, SPSS, Tableau</li>
-    <li><strong>Languages:</strong> Russian, English, French, ASL</li>
-  </ul>
 </div>
 
 <script>
