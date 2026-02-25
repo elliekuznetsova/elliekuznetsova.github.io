@@ -34,11 +34,19 @@ a:hover {
 
 .container {
   display: flex;
-  max-width: 1000px;
-  margin: 0 auto;
-  gap: 60px;
+  align-items: flex-start;
 }
 
+.sidebar {
+  width: 260px;
+  margin-right: 60px;
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  max-width: 900px;
+}
 /* ===== Sidebar (ALWAYS visible) ===== */
 
 .sidebar {
