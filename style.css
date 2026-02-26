@@ -180,3 +180,31 @@ section {
 .contacts a:hover {
   text-decoration: underline;
 }
+
+.contacts {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.contacts div {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.contacts i {
+  font-size: 13px;       /* small icons */
+  color: #555;           /* soft gray */
+  margin-right: 6px;     /* tight spacing */
+}
+
+.contacts a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  text-decoration: underline;
+}
+
