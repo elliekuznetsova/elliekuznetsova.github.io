@@ -68,6 +68,9 @@ a:hover {
     display: grid;
     grid-template-columns: 260px 1fr;
     column-gap: 40px;
+    align-items: start;
+    min-height: 100vh;
+
   }
 
   .sidebar {
