@@ -207,3 +207,13 @@ section {
   margin-bottom: 0.8em;
   line-height: 1.45;
 }
+
+.research-block h4.subheading {
+  margin-top: -0.3em;   /* pulls the subsection closer to the bullets */
+  margin-bottom: 0.4em;
+  padding-left: 1em;    /* visually nests it under the parent section */
+}
+
+.research-block .hanging-indent {
+  margin-left: 1em;     /* aligns papers under the subsection */
+}
