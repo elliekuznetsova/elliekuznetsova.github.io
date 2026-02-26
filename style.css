@@ -162,4 +162,12 @@ section {
   text-decoration: underline;
 }
 
-/* cache bust 1 */
+.teaching-table {
+  font-size: 14px;      
+  line-height: 1.4; 
+}
+
+.teaching-table th,
+.teaching-table td {
+  padding: 6px 10px 6px 0;
+}
