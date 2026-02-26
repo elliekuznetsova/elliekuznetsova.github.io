@@ -156,6 +156,13 @@ section {
   line-height: 1.4;
 }
 
+.teaching-entry .details {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
 .contacts {
   margin-top: 12px;
   font-size: 14px;
