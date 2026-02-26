@@ -26,9 +26,9 @@ a:hover {
 
 /* ====== Layout ====== */
 .container {
-  max-width: 1100px;
+  max-width: 1000px;     /* narrower like Daria */
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 0;       /* no horizontal padding */
 }
 
 /* Sidebar */
@@ -39,13 +39,13 @@ a:hover {
 }
 
 .sidebar img {
-  width: 180px;
+  width: 150px;          /* smaller like Daria */
   border-radius: 6px;
   margin-bottom: 20px;
 }
 
 .sidebar .name {
-  font-size: 24px;
+  font-size: 20px;       /* smaller like Daria */
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -60,8 +60,8 @@ a:hover {
 @media (min-width: 900px) {
   .container {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    column-gap: 20px;            
+    grid-template-columns: 180px 1fr; /* narrower sidebar */
+    column-gap: 20px;                 /* tighter gap */
     align-items: start;
     min-height: 100vh;
   }
@@ -71,9 +71,9 @@ a:hover {
     padding-bottom: 0;
     margin-bottom: 0;
     border-right: 1px solid #ddd;
-    padding-right: 12px;             
+    padding-right: 14px;              /* tighter padding */
     position: sticky;
-    top: 30px;      
+    top: 30px;
     align-self: start;
   }
 }
@@ -100,6 +100,7 @@ section {
   margin-bottom: 60px;
 }
 
+/* Teaching entry (old layout — still used for philosophy) */
 .teaching-entry {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -111,22 +112,13 @@ section {
   font-weight: 600;
   color: #444;
   font-size: 14px;
-  white-space: nowrap;  
-  width: 110px;     
+  white-space: nowrap;
+  width: 110px;
 }
 
 .teaching-entry .course {
   font-size: 15px;
   line-height: 1.5;
-}
-
-.teaching-entry ul {
-  margin: 6px 0 0 20px;
-  padding: 0;
-}
-
-.teaching-entry li {
-  margin-bottom: 3px;
 }
 
 .teaching-entry .details {
@@ -135,6 +127,8 @@ section {
   font-size: 13px;
   color: #666;
 }
+
+/* Contacts */
 .contacts {
   margin-top: 12px;
   font-size: 14px;
@@ -148,9 +142,9 @@ section {
 }
 
 .contacts i {
-  font-size: 13px;       /* small icons */
-  color: #555;           /* soft gray */
-  margin-right: 6px;     /* tight spacing */
+  font-size: 13px;
+  color: #555;
+  margin-right: 6px;
 }
 
 .contacts a {
@@ -162,6 +156,7 @@ section {
   text-decoration: underline;
 }
 
+/* ====== Daria-style teaching table ====== */
 .teaching-table {
   width: 100%;
   border-collapse: collapse;
@@ -190,8 +185,20 @@ section {
   border-bottom: none;
 }
 
+/* Narrow first column like Daria */
 .teaching-table td:first-child,
 .teaching-table th:first-child {
-  width: 140px;           /* adjust to taste */
+  width: 140px;
   white-space: nowrap;
+}
+
+/* Vertical column lines like Daria */
+.teaching-table th,
+.teaching-table td {
+  border-right: 1px solid #ddd;
+}
+
+.teaching-table th:last-child,
+.teaching-table td:last-child {
+  border-right: none;
 }
