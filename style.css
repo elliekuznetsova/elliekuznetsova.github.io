@@ -163,27 +163,35 @@ section {
 }
 
 .teaching-table {
-  font-size: 13px;      /* smaller like Daria */
-  line-height: 1.35;    /* tighter */
   width: 100%;
   border-collapse: collapse;
+  font-size: 13px;        /* smaller font */
+  line-height: 1.35;      /* tighter spacing */
   margin-top: 20px;
 }
 
 .teaching-table th {
   text-align: left;
-  font-weight: 600;     /* lighter than bold */
+  font-weight: 600;       /* lighter than bold */
   padding: 6px 8px 6px 0;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;  /* thick header line */
   color: #444;
+  font-size: 12.5px;      /* slightly smaller header */
 }
 
 .teaching-table td {
-  padding: 6px 8px 6px 0;
+  padding: 6px 8px 6px 0; /* tight rows */
   border-bottom: 1px solid #e5e5e5;
   color: #333;
+  vertical-align: top;
 }
 
 .teaching-table tr:last-child td {
   border-bottom: none;
+}
+
+.teaching-table td:first-child,
+.teaching-table th:first-child {
+  width: 140px;           /* adjust to taste */
+  white-space: nowrap;
 }
