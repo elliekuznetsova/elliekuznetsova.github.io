@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.75;
+  min-height: 120vh;
 }
 
 h1, h2, h3 {
