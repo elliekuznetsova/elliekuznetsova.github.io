@@ -208,25 +208,8 @@ section {
   line-height: 1.45;
 }
 
-/* Indent all content under each research-block header */
-.research-block .research-content {
-  margin-left: 1.5em;
-}
 
 /* Subsection indentation (Relevant Papers) */
 .research-block .sub-block {
-  margin-left: 1.5em;      /* deeper than main bullets */
-  padding-left: 1em;       /* breathing room inside the border */
   border-left: 3px solid #e0e0e0;  /* visual grouping */
-}
-
-/* Subheading spacing */
-.research-block .subheading {
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
-}
-
-/* Improve spacing between citation entries */
-.research-block .sub-block .hanging-indent {
-  margin-bottom: 0.6em;
 }
