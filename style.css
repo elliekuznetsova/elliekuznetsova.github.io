@@ -52,6 +52,11 @@ a:hover {
   text-decoration: none; /* not underlined normally */
 }
 
+.sidebar .name a {
+  color: #111;            /* same dark color as headings */
+  text-decoration: none;
+}
+
 .sidebar .name a:hover {
   text-decoration: underline; /* underline only on hover */
 }
