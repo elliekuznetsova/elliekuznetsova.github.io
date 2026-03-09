@@ -292,3 +292,10 @@ section {
   font-weight: 700;
   color: #b9dcff;
 }
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 520px));
+  gap: 28px;
+  margin-top: 24px;
+}
