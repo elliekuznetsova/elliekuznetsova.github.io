@@ -258,6 +258,7 @@ section {
 
 .media-card-content {
   padding: 22px 24px 24px;
+  background: rgba(10, 30, 50, 0.85);
 }
 
 .media-tag {
