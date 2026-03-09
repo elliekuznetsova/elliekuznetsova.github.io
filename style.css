@@ -236,29 +236,27 @@ section {
   display: block;
   text-decoration: none;
   color: inherit;
-  background: #111821;
-  border: 1px solid #1e2b36;
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid #e2e2e2;
+  background: white;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .media-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-  border-color: #2f4f63;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .media-card img {
   width: 100%;
-  height: 240px;
+  height: 220px;
   object-fit: cover;
-  display: block;
 }
 
 .media-card-content {
-  padding: 22px 24px 24px;
-  background: rgba(10, 30, 50, 0.85);
+  padding: 20px 24px;
+  background: #f9fbfd;
 }
 
 .media-tag {
