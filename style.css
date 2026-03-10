@@ -20,6 +20,7 @@ a {
   color: #0366d6;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -27,7 +28,7 @@ a:hover {
 /* ====== Layout ====== */
 .container {
   max-width: 1500px;
-  margin: 20px; 
+  margin: 20px;
   padding: 40px 0;
 }
 
@@ -39,26 +40,26 @@ a:hover {
 }
 
 .sidebar img {
-  width: 200px;       
+  width: 200px;
   border-radius: 6px;
   margin-bottom: 20px;
 }
 
 .sidebar .name {
-  font-size: 20px; 
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 5px;
-  color: inherit;        /* keeps it black instead of blue */
-  text-decoration: none; /* not underlined normally */
+  color: inherit;
+  text-decoration: none;
 }
 
 .sidebar .name a {
-  color: #111;            /* same dark color as headings */
+  color: #111;
   text-decoration: none;
 }
 
 .sidebar .name a:hover {
-  text-decoration: underline; /* underline only on hover */
+  text-decoration: underline;
 }
 
 .sidebar .title {
@@ -71,8 +72,8 @@ a:hover {
 @media (min-width: 900px) {
   .container {
     display: grid;
-    grid-template-columns: 220px 1fr; 
-    column-gap: 20px;      
+    grid-template-columns: 220px 1fr;
+    column-gap: 20px;
     align-items: start;
     min-height: 100vh;
   }
@@ -82,7 +83,7 @@ a:hover {
     padding-bottom: 0;
     margin-bottom: 0;
     border-right: 1px solid #ddd;
-    padding-right: 14px;        
+    padding-right: 14px;
     position: sticky;
     top: 30px;
     align-self: start;
@@ -171,22 +172,22 @@ section {
 .teaching-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;        
+  font-size: 13px;
   line-height: 1.35;
   margin-top: 20px;
 }
 
 .teaching-table th {
   text-align: left;
-  font-weight: 600;  
+  font-weight: 600;
   padding: 6px 8px 6px 0;
   border-bottom: 2px solid #ccc;
   color: #444;
-  font-size: 12.5px;   
+  font-size: 12.5px;
 }
 
 .teaching-table td {
-  padding: 6px 8px 6px 0; 
+  padding: 6px 8px 6px 0;
   border-bottom: 1px solid #e5e5e5;
   color: #333;
   vertical-align: top;
@@ -219,17 +220,17 @@ section {
   line-height: 1.45;
 }
 
-
 /* Subsection indentation (Relevant Papers) */
 .research-block .sub-block {
-  border-left: 3px solid #e0e0e0;  /* visual grouping */
+  border-left: 3px solid #e0e0e0;
 }
 
+/* Media */
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 520px));
   gap: 28px;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .media-card {
@@ -245,7 +246,7 @@ section {
 
 .media-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .media-card img {
@@ -278,23 +279,16 @@ section {
 .media-card p {
   margin: 0 0 18px;
   line-height: 1.7;
-  color: #c7d0d8;
+  color: #4f5b66;
 }
 
 .media-meta {
   font-size: 0.95rem;
-  color: #9aa8b5;
+  color: #6b7785;
   margin-bottom: 16px;
 }
 
 .media-link {
   font-weight: 700;
-  color: #b9dcff;
-}
-
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 520px));
-  gap: 28px;
-  margin-top: 24px;
+  color: #17364a;
 }
