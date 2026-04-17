@@ -35,8 +35,8 @@ a:hover {
 
 /* Sidebar */
 .sidebar {
-  padding-right: 32px;
-  border-right: 1px solid #e6e6e6;
+  width: 260px;  
+  flex-shrink: 0;
 }
 
 .sidebar img {
