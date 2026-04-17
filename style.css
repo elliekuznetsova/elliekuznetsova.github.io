@@ -30,29 +30,27 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 24px;
-  grid-template-columns: 320px 1fr;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 260px;  
-  flex-shrink: 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
 }
 
 .sidebar img {
-  width: 180px;
-  border-radius: 18px;
-  margin-bottom: 18px;
+  width: 200px;
+  border-radius: 6px;
+  margin-bottom: 20px;
 }
 
 .sidebar .name {
-  font-size: 40px;
-  line-height: 1.05;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-  display: block;
-  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .sidebar .name a {
@@ -65,8 +63,9 @@ a:hover {
 }
 
 .sidebar .title {
-  color: #666;
-  margin-bottom: 18px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 /* Desktop two-column layout */
