@@ -46,9 +46,13 @@ a:hover {
 }
 
 .sidebar .name {
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: 40px;
+  line-height: 1.05;
   white-space: nowrap;
-  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: clip;
+  display: block;
+  width: 100%;
 }
 
 .sidebar .name a {
