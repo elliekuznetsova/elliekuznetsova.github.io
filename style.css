@@ -45,8 +45,7 @@ a:hover {
 }
 
 .sidebar .name {
-  font-size: 28px;
-  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .sidebar .name a {
