@@ -28,13 +28,13 @@ nav{display:flex;flex-wrap:wrap;gap:6px 24px;margin-bottom:26px}
 nav a[aria-current]{color:var(--fg);font-weight:600}
 h2{font:700 1.8rem/1.2 Merriweather,Georgia,serif;margin:0 0 12px}
 p{margin:0 0 12px;max-width:760px}
-.stage{position:relative;height:540px;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow:hidden;margin-top:16px}
+.stage{position:relative;height:max(540px,calc(100vh - 250px));margin-top:8px}
 svg#g{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
 .node{cursor:pointer;transition:opacity .2s}
 .node:focus-visible{outline:none;stroke:var(--fg);stroke-width:2.5}
 .link{stroke:rgb(var(--edge));transition:opacity .2s}
 #legend{position:absolute;left:12px;bottom:10px;display:flex;flex-direction:column;gap:4px;align-items:flex-start}
-#legend button{all:unset;cursor:pointer;display:flex;align-items:center;gap:9px;font-size:.98rem;padding:2px 10px 2px 4px;border-radius:99px;border:1px solid transparent;background:var(--panel)}
+#legend button{all:unset;cursor:pointer;display:flex;align-items:center;gap:9px;font-size:.98rem;padding:2px 10px 2px 4px;border-radius:99px;border:1px solid transparent;background:transparent}
 #legend button:hover{border-color:var(--line)}
 #legend button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 #legend button[aria-pressed="false"]{opacity:.45}
