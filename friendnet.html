@@ -76,15 +76,17 @@ svg#g{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
  </nav>
  <h2>Friendnet</h2>
  <p>I love my friends, so check them out! You can use the legend to focus on one group.</p>
- <div class="stage">
+
+ <!-- ########commented out#########|
+<div class="stage">
   <svg id="g" role="img" aria-label="Slowly rotating 3D network graph of friends grouped by community"></svg>
   <div id="legend" role="group" aria-label="Filter by group"></div>
   <div id="card" role="dialog"></div>
  </div>
  <p style="margin-top:18px">Want to join the network? <a href="mailto:ye.s.kuznetsova@gmail.com">ye.s.kuznetsova@gmail.com</a></p>
+ <p style="font-size:.9rem;color:var(--muted)">Friendnet idea and design inspired by <a href="https://anna.dymchenko.com/friends.html">Anna Dymchenko</a>.</p>
 </main>
-</div>
-
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script>
 // ---- EDIT HERE: add groups, people, and cross-group links ----
@@ -230,6 +232,6 @@ keys.forEach(k => {
   };
   legend.appendChild(b);
 });
-</script>
+</script> |########commented out#########-->
 </body>
 </html>
