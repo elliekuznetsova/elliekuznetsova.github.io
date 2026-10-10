@@ -47,8 +47,7 @@
   <a href="project-minimal-pairs.html" aria-current="page">Code-Switching Grammaticality in LMs</a>
 </h2>
       
-<article class="card project-detail" style="view-transition-name: proj-minimal-pairs"
-  data-tags="Python, Data Collection, minicons, matplotlib, seaborn, LLM evaluation, NLP">
+<article class="card project-detail" style="view-transition-name: proj-minimal-pairs">
   
   <p class="meta">Sep 2025 – present</p>
 
@@ -60,6 +59,20 @@
   <p>...</p>
 
     <p class="meta"><a href="https://lemn-lab.github.io/" target="_blank" rel="noopener">Learning, Meaning, and Natural Language Lab</a></p>
+
+  <ul class="tags"></ul>
+
+<script>
+document.querySelectorAll('.project-detail').forEach(a => {
+  const ul = a.querySelector('.tags');
+  a.dataset.tags.split(',').forEach(t => {
+    const li = document.createElement('li');
+    li.textContent = t.trim();
+    ul.appendChild(li);
+  });
+});
+</script>
+  
 </article>
 
 <script>
