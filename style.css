@@ -297,3 +297,25 @@ section {
   font-weight: 700;
   color: #17364a;
 }
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.job-header h3 {
+  margin: 0;
+}
+.job-date {
+  font-size: 0.95rem;
+  color: #6b6b6b;
+  white-space: nowrap;
+}
+
+.job-org {
+  font-size: 0.95rem;
+  color: #6b6b6b;
+  margin-top: 2px;
+}
