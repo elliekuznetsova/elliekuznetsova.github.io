@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio — Ellie Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="name"><a href="/">Ellie Kuznetsova</a></div>
+    <img src="photo.jpg" alt="Ellie Kuznetsova">
+
+    <div class="contacts">
+      <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
+      <div><i class="fa-solid fa-envelope"></i> <a href="mailto:ye.s.kuznetsova@gmail.com">Email</a></div>
+      <div><i class="fa-brands fa-github"></i> <a href="https://github.com/elliekuznetsova" target="_blank">GitHub</a></div>
+      <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/elliekuznetsova/" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <nav class="navbar">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="media.html">Media</a>
+      <a href="cv.html">CV</a>
+      <a href="friendnet.html">Friendnet</a>
+    </nav>
+
+    <section>
+
+      <h2 class="breadcrumb-title">
+        <a href="portfolio.html">Portfolio</a>
+        <span aria-hidden="true">/</span>
+        <a href="project-rapport" aria-current="page">The role of feedback modality in student–instructor rapport: A study of screencast and written approaches</a>
+      </h2>
+
+      <!-- view-transition-name must match the card on portfolio.html exactly -->
+      <article class="card project-detail" style="view-transition-name: project-rapport"
+        data-tags="Corpus building, Annotation, Data cleaning, t-tests">
+
+        <h3>The role of feedback modality in student–instructor rapport: A study of screencast and written approaches</h3>
+
+        <p>2022 – 2026</p>
+
+        <p>This study asked whether screencast feedback builds more rapport between instructors and students than written feedback, using independent samples t-tests on the same corpus. I contributed to corpus construction, annotated and coded comments, and wrote the methods and discussion sections. The results challenged assumptions about the benefits of screencast feedback. Manuscript submitted to <em>CALICO Journal</em>.</p>
+
+        <!-- Add the rest of the details here (whatever was cut off on the portfolio card), for example:
+        <h3>Methods</h3>
+        <p>...</p>
+        <h3>Results</h3>
+        <p>...</p>
+        -->
+        <ul class="tags"></ul>
+
+      </article>
+
+      <script>
+      document.querySelectorAll('.project-detail').forEach(a => {
+        const ul = a.querySelector('.tags');
+        a.dataset.tags.split(',').forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t.trim();
+          ul.appendChild(li);
+        });
+      });
+      </script>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
