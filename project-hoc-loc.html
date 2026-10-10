@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=4">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="expect" href="#project-card" blocking="render">
 </head>
 
 <body>
@@ -48,7 +49,7 @@
       </h2>
 
       <!-- view-transition-name must match the card on portfolio.html exactly -->
-      <article class="card project-detail" style="view-transition-name: project-hoc-loc"
+      <article id="project-card" class="card project-detail" style="view-transition-name: project-hoc-loc"
         data-tags="R, Corpus building, Annotation, Data cleaning, Random forests">
 
         <h3>Higher- and lower-order concerns in instructor comments: A corpus-based comparison of screencast feedback and written feedback</h3>
