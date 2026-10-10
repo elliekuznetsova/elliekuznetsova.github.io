@@ -436,8 +436,8 @@ section {
 }
 
 @media (max-width: 600px) {
-  .tabs {            /* your tab container's class */
+  .navbar {
     flex-wrap: wrap;
-    gap: 0.4rem 1rem;
+    gap: 0.4rem 1rem;   /* row gap, column gap (replaces the 25px) */
   }
 }
