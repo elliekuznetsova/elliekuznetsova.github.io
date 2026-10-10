@@ -391,3 +391,20 @@ section {
 .breadcrumb-title a[aria-current] {
   color: #111;
 }
+
+.project-detail .tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+.project-detail .tags li {
+  background: #ececec;
+  color: #333;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
