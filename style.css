@@ -326,3 +326,21 @@ section {
 .job-header + ul {
   margin: 0.25rem 0 0;
 }
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.service-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.service-list li > span:first-child {
+  flex: 1;
+  min-width: 0;
+}
