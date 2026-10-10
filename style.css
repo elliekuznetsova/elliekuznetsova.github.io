@@ -429,8 +429,24 @@ section {
     padding: 3px 9px;
     border-radius: 4px;
   }
-
+.project-detail h3 {
+  margin: 0 0 0.25rem;
+  line-height: 1.35;
+}
 .project-detail .meta {
   color: #6b6b6b;
   font-size: 0.95rem;
+  margin: 0 0 0.6rem;
+  line-height: 1.4;
+}
+}
+.project-detail p {
+  margin: 0 0 0.6rem;
+  line-height: 1.6;
+}
+.project-detail .tags {
+  margin-top: 0.9rem;
+}
+.breadcrumb-title {
+  margin-bottom: 0.75rem;
 }
