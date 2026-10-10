@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio — Ellie Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="name"><a href="/">Ellie Kuznetsova</a></div>
+    <img src="photo.jpg" alt="Ellie Kuznetsova">
+
+    <div class="contacts">
+      <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
+      <div><i class="fa-solid fa-envelope"></i> <a href="mailto:ye.s.kuznetsova@gmail.com">Email</a></div>
+      <div><i class="fa-brands fa-github"></i> <a href="https://github.com/elliekuznetsova" target="_blank">GitHub</a></div>
+      <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/elliekuznetsova/" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <nav class="navbar">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="media.html">Media</a>
+      <a href="cv.html">CV</a>
+      <a href="friendnet.html">Friendnet</a>
+    </nav>
+
+    <section>
+
+      <h2 class="breadcrumb-title">
+        <a href="portfolio.html">Portfolio</a>
+        <span aria-hidden="true">/</span>
+        <a href="project-distinctiveness.html" aria-current="page">Convention Formation in a Spanish–English Code-Switched Tangrams Corpus</a>
+      </h2>
+
+      <!-- view-transition-name must match the card on portfolio.html exactly -->
+      <article class="card project-detail" style="view-transition-name: project-distinctiveness"
+        data-tags="Python, Data Collection, minicons, matplotlib, seaborn, LLM evaluation, NLP">
+
+        <h3>Code-Switching Grammaticality in LMs</h3>
+
+        <p>Sep 2025 – present</p>
+
+        <p>I lead a Spanish-English code-switching study from design to analysis. I built a pipeline that computes surprisal for XLM-RoBERTa and Llama 3 on minimal pairs and compares model preferences with human judgments, and I mentor undergraduate research assistants on sentence generation and quality control.</p>
+
+        <!-- Add the rest of the details here (whatever was cut off on the portfolio card), for example:
+        <h3>Methods</h3>
+        <p>...</p>
+        <h3>Results</h3>
+        <p>...</p>
+        -->
+        <p class="meta"><a href="https://lemn-lab.github.io/" target="_blank" rel="noopener">Learning, Meaning, and Natural Language Lab</a></p>
+        <ul class="tags"></ul>
+
+      </article>
+
+      <script>
+      document.querySelectorAll('.project-detail').forEach(a => {
+        const ul = a.querySelector('.tags');
+        a.dataset.tags.split(',').forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t.trim();
+          ul.appendChild(li);
+        });
+      });
+      </script>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
