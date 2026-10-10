@@ -378,8 +378,10 @@ section {
 
 /* ====== Project detail page ====== */
 .breadcrumb-title {
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 400;
   margin: 0.5rem 0 0.75rem;
+  line-height: 1.4;
 }
 .breadcrumb-title span {
   color: #aaa;
@@ -390,10 +392,12 @@ section {
   color: #0366d6;
 }
 .breadcrumb-title a[aria-current] {
-  color: #111;
+  color: #444;
+  font-weight: 600;
 }
 
 .project-detail h3 {
+  font-size: 1.5rem;
   margin: 0 0 0.25rem;
   line-height: 1.35;
 }
