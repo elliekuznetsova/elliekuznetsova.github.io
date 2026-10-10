@@ -304,10 +304,9 @@ section {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 4px 16px;
+  margin: 1.75rem 0 0.5rem;
 }
-.job-header h3 {
-  margin: 0;
-}
+
 .job-date {
   font-size: 0.95rem;
   color: #6b6b6b;
