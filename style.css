@@ -375,3 +375,16 @@ section {
   ::view-transition-group(*) { animation-duration: 0.01s; }
   .project-detail { animation: none; }
 }
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  color: #6b6b6b;
+}
+.breadcrumb a[aria-current] {
+  color: #222;
+  font-weight: 600;
+}
