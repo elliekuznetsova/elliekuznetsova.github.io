@@ -329,16 +329,22 @@ section {
 
 .service-list {
   list-style: none;
-  padding: 0;
+  padding: 0 0 0 1.5rem;   /* same indent as your other bullet lists */
   margin: 0.5rem 0 0;
 }
 .service-list li {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 4px 16px;
   margin-bottom: 0.5rem;
   line-height: 1.4;
+}
+.service-list li::before {
+  content: "•";
+  position: absolute;
+  left: -1.1rem;
 }
 .service-list li > span:first-child {
   flex: 1;
