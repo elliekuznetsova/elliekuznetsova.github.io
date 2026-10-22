@@ -203,10 +203,19 @@ function showCard(d){
   card.style.top = (d.sy - rr - ch - 10 < 8 ? d.sy + rr + 10 : d.sy - rr - ch - 10) + "px";
 }
 function hide(){ hov = null; pinned = null; card.style.display = "none"; }
+
+const canHover = matchMedia("(hover: hover)").matches;
+
 node.on("mouseenter focus",(e,d)=>{ if(!pinned){ hov = d; showCard(d); } })
     .on("mouseleave blur",()=>{ if(!pinned){ hov = null; card.style.display = "none"; } })
-    .on("click",(e,d)=>{ e.stopPropagation(); pinned = d; hov = d; showCard(d); })
+    .on("click",(e,d)=>{
+      e.stopPropagation();
+      // mouse: open right away. touch: first tap shows the card, second tap opens
+      if (canHover || pinned === d) { window.open(d.url, "_blank", "noopener"); return; }
+      pinned = d; hov = d; showCard(d);
+    })
     .on("keydown",(e,d)=>{ if(e.key==="Enter") window.open(d.url,"_blank","noopener"); });
+
 svg.on("click", hide);
 addEventListener("keydown", e => { if (e.key==="Escape") hide(); });
 
