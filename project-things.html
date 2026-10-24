@@ -61,12 +61,33 @@
            Alignment with human judgments increased in later layers of both models, and AlexNet unexpectedly aligned more closely than ResNet-50.
         </p>
 
-        <!-- Add the rest of the details here (whatever was cut off on the portfolio card), for example:
-        <h3>Methods</h3>
-        <p>...</p>
-        <h3>Results</h3>
-        <p>...</p>
-        -->
+        <h4>Layer-wise alignment with human judgments</h4>
+          <figure>
+            <img src="images/things-layer-alignment.png" alt="Bar chart of Pearson correlations between each model layer and human similarity judgments">
+              <figcaption>
+              Representational similarity analysis (RSA): Pearson correlation between each layer's similarity matrix and the human similarity matrix.
+              Alignment rises in later layers of both models, peaking at AlexNet fc8 (r = .54) and ResNet-50 res5c (r = .42).
+          </figcaption>
+          </figure>
+
+        <h4>Odd-one-out accuracy</h4>
+          <figure>
+            <img src="images/things-accuracy-table.png" alt="Table of odd-one-out accuracy by model layer">
+              <figcaption>
+              How often each layer chose the same odd one out as humans (chance = 33.3%).
+              AlexNet fc8 scored highest (50.1%), followed by ResNet-50 res5c (47.3%).
+              </figcaption>
+          </figure>
+
+        <h4>Category-level results</h4>
+          <figure>
+            <img src="images/things-category-heatmap.png" alt="Heatmap of odd-one-out accuracy for individual object concepts across layers">
+            <figcaption>
+            Odd-one-out accuracy by object concept and layer. Some concepts align best in late layers (coyote: 0.911 in AlexNet fc8),
+            while others reach high accuracy early (spinach: 0.723 in AlexNet pool1).
+            </figcaption>
+          </figure>
+        
         <ul class="tags"></ul>
 
       </article>
