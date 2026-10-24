@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio — Ellie Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="expect" href="#project-card" blocking="render">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="name"><a href="/">Ellie Kuznetsova</a></div>
+    <img src="photo.jpg" alt="Ellie Kuznetsova">
+
+    <div class="contacts">
+      <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
+      <div><i class="fa-solid fa-envelope"></i> <a href="mailto:ye.s.kuznetsova@gmail.com">ye.s.kuznetsova@gmail.com</a></div>
+      <div><i class="fa-brands fa-github"></i> <a href="https://github.com/elliekuznetsova" target="_blank">GitHub</a></div>
+      <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/elliekuznetsova/" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <nav class="navbar">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="media.html">Media</a>
+      <a href="cv.html">CV</a>
+      <a href="friendnet.html">Friendnet</a>
+    </nav>
+
+    <section>
+
+      <h2 class="breadcrumb-title">
+        <a href="portfolio.html">Portfolio</a>
+        <span aria-hidden="true">/</span>
+        <a href="project-things.html" aria-current="page">When Do Neural Networks Think Like Humans? Comparing Shallow and Deep CNN Representations on Image Similarity Task</a>
+      </h2>
+
+      <!-- view-transition-name must match the card on portfolio.html exactly -->
+      <article id="project-card" class="card project-detail" style="view-transition-name: project-things"
+        data-tags="Python, PyTorch, NumPy, Pandas, SciPy, seaborn, matplotlib, Jupyter, Computer vision, CNNs, AlexNet, ResNet-50, Pretrained models, Representational similarity analysis, Cosine similarity, Human similarity judgments, Cognitive modeling, THINGS dataset">
+
+        <h3>When Do Neural Networks Think Like Humans? Comparing Shallow and Deep CNN Representations on Image Similarity Task</h3>
+
+        <p>Mar – Jun 2025</p>
+
+        <p>
+           With Natalie Abel and Shambhavi Mittal. We compared layer-wise representations from AlexNet and ResNet-50 with human object similarity judgments from the THINGS dataset, using odd-one-out accuracy on 50,000 triplets and RSA. 
+           Alignment with human judgments increased in later layers of both models, and AlexNet unexpectedly aligned more closely than ResNet-50.
+        </p>
+
+        <!-- Add the rest of the details here (whatever was cut off on the portfolio card), for example:
+        <h3>Methods</h3>
+        <p>...</p>
+        <h3>Results</h3>
+        <p>...</p>
+        -->
+        <ul class="tags"></ul>
+
+      </article>
+
+      <script>
+      document.querySelectorAll('.project-detail').forEach(a => {
+        const ul = a.querySelector('.tags');
+        a.dataset.tags.split(',').forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t.trim();
+          ul.appendChild(li);
+        });
+      });
+      </script>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
