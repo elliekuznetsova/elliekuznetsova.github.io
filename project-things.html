@@ -67,14 +67,14 @@
         <h4>Layer-wise alignment with human judgments</h4>
           <p>
             Using representational similarity analysis (RSA), we correlated each layer's similarity matrix with a human similarity matrix
-            built from SPoSE embeddings of the 1,854 THINGS concepts. Alignment rose in later layers of both models,
+            built from SPoSE embeddings of the 1,854 THINGS concepts. Alignment generally rose in later layers of both models,
             peaking at AlexNet fc8 (r = .54) and ResNet-50 res5c (r = .42).
           </p>
         <img src="images/things-layer-alignment.png" alt="Bar chart of Pearson correlations between each model layer and human similarity judgments">
 
         <h4>Odd-one-out accuracy</h4>
           <p>
-            Agreement with human choices improved in later layers of both models, but stayed only moderately above chance (33.3%).
+            Agreement with human choices generally improved in later layers of both models, but stayed only moderately above chance (33.3%).
             AlexNet's final layer, fc8, scored highest (50.11%), ahead of ResNet-50's res5c (47.25%).
           </p>
         <img src="images/things-accuracy-table.png" alt="Table of odd-one-out accuracy by model and layer, sorted from AlexNet fc8 at 50.11% to ResNet-50 conv1 at 37.54%">
