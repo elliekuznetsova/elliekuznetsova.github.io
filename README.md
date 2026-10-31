@@ -1,3 +1,6 @@
-# ellieshka.github.io
-Personal website, CV, and resume for Ellie Kuznetsova.
-Built with GitHub Pages and Jekyll.
+
+Personal website of Ellie (Elizaveta) Kuznetsova: research, teaching, portfolio, and CV.
+
+🌐 Live site: https://elliekuznetsova.github.io/
+
+Built with GitHub Pages.
