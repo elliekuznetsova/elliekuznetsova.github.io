@@ -72,9 +72,6 @@
 
     <section>
       <h2>Portfolio</h2>
-
-      <div class="filters" id="filters" aria-label="Filter projects by skill"></div>
-
       <div class="card-grid">
         
 <article class="card" style="view-transition-name: project-minimal-pairs" data-tags="Python, LaTeX, Data Collection, minicons, matplotlib, seaborn, LLM evaluation, NLP">
@@ -134,50 +131,20 @@
 
   </div>
 </div>
-
 <script>
-  // Builds the visible tags and the filter buttons from each card's data-tags.
+  // Builds the visible tags on each card from its data-tags.
   (function () {
-    var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
-    var bar = document.getElementById('filters');
-    var all = {};
-
-    cards.forEach(function (card) {
+    var cards = document.querySelectorAll('.card');
+    Array.prototype.forEach.call(cards, function (card) {
       var list = card.getAttribute('data-tags').split(',').map(function (t) { return t.trim(); }).filter(Boolean);
       var ul = document.createElement('ul');
       ul.className = 'tags';
       list.forEach(function (t) {
-        all[t] = true;
         var li = document.createElement('li');
         li.textContent = t;
         ul.appendChild(li);
       });
       card.appendChild(ul);
-    });
-
-    function addButton(label, value) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = label;
-      b.setAttribute('data-filter', value);
-      b.setAttribute('aria-pressed', value === 'all' ? 'true' : 'false');
-      bar.appendChild(b);
-    }
-
-    addButton('All', 'all');
-    Object.keys(all).sort().forEach(function (t) { addButton(t, t); });
-
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('button');
-      if (!btn) return;
-      var f = btn.getAttribute('data-filter');
-      Array.prototype.forEach.call(bar.children, function (b) {
-        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-      });
-      cards.forEach(function (card) {
-        var tags = card.getAttribute('data-tags').split(',').map(function (s) { return s.trim(); });
-        card.hidden = !(f === 'all' || tags.indexOf(f) !== -1);
-      });
     });
   })();
 </script>
