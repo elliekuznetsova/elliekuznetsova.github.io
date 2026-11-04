@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects — Ellie Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="expect" href="#project-card" blocking="render">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="name"><a href="/">Ellie Kuznetsova</a></div>
+    <img src="photo.jpg" alt="Ellie Kuznetsova">
+
+    <div class="contacts">
+      <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
+      <div><i class="fa-solid fa-envelope"></i> <a href="mailto:ye.s.kuznetsova@gmail.com">ye.s.kuznetsova@gmail.com</a></div>
+      <div><i class="fa-brands fa-github"></i> <a href="https://github.com/elliekuznetsova" target="_blank">GitHub</a></div>
+      <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/elliekuznetsova/" target="_blank">LinkedIn</a></div>
+      <div><i class="fa-solid fa-file-lines"></i> <a href="CV_Ellie_Kuznetsova.pdf" target="_blank">CV</a>&nbsp;/&nbsp;<a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Resume</a></div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <nav class="navbar">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="friendnet.html">Friendnet</a>
+    </nav>
+
+    <section>
+
+      <h2 class="breadcrumb-title">
+        <a href="projects.html">Projects</a>
+        <span aria-hidden="true">/</span>
+        <a href="project-truthseeker.html" aria-current="page">Seeking Truth: Building a Classifier to Detect Fake News</a>
+      </h2>
+
+      <article id="project-card" class="card project-detail" style="view-transition-name: project-truthseeker"
+        data-tags="Python, scikit-learn, Pandas, matplotlib, Random forests, SVM, Logistic regression, KNN, Hyperparameter tuning, Cross-validation, Permutation feature importance, Feature selection, ROC-AUC, Replication, Misinformation detection, TruthSeeker dataset">
+
+        <h3>Seeking Truth: Building a Classifier to Detect Fake News</h3>
+
+        <p class="meta">CSS 206 / COGS 209 Scientific Data Analysis and Statistical Learning, UC San Diego · Mar – Jun 2026 · with Yaru (Irene) Su, Marissa Chemotti, and Shambhavi Mittal</p>
+
+          <p>
+            On platforms like X (formerly Twitter), far more posts appear every day than people could ever check by hand,
+            so scalable tools are needed to flag misinformation. Dadkhah et al. (2024) trained machine learning classifiers
+            to tell real news from fake news on X using their open TruthSeeker dataset. We set out to replicate their results
+            and to test whether a model with fewer features could perform just as well.
+          </p>
+
+        <h4>Data and methods</h4>
+          <p>
+            After removing duplicates and empty rows, the dataset contained 134,198 tweets tied to 1,400 PolitiFact-verified news statements,
+            with a balanced 50/50 split of real and fake labels from Amazon Mechanical Turk coders. We used 56 structured features,
+            covering text counts, lexical and syntactic features, and user metadata such as follower count and bot score.
+            We split the data 80/20 into training and test sets and fit the scaler on the training set only, to avoid data leakage.
+          </p>
+          <p>
+            We first compared several classifiers, including logistic regression, k-nearest neighbors, decision trees, support vector machines,
+            and Random Forest. Random Forest had the highest test accuracy (0.692) and ran much faster than the SVMs, so we used it for the rest of the study.
+          </p>
+
+        <h4>Feature reduction</h4>
+          <p>
+            We ranked all 56 features by permutation importance, which measures how much accuracy drops when a feature&rsquo;s values are shuffled.
+            Importance fell steeply among the top features and flattened out at about rank 35, so we kept the top 35.
+            The most important predictor was the share of named people mentioned in a tweet, followed by how many Twitter lists the user appears on,
+            the number of URLs, word count, and past-tense verbs.
+          </p>
+        <img style="max-width: 640px;" src="images/truthseeker-feature-cutoff.png" alt="Scatter plot of permutation importance by feature rank, with a red dashed cutoff line at 35 features where the scores level off near zero">
+        <img style="max-width: 520px;" src="images/truthseeker-feature-importance.png" alt="Bar chart of permutation importance for all 56 features, with the top 35 highlighted in green, led by PERSON_percentage, listed_count, and URLs">
+
+        <h4>Results</h4>
+          <p>
+            We compared four Random Forest models: untuned and tuned versions with all 56 features and with the top 35.
+            For the tuned models, we searched the number of trees, tree depth, and split and leaf settings with RandomizedSearchCV and 5-fold cross-validation.
+            The tuned 56-feature model (M3) performed best, with 70.5% accuracy and an AUC of 0.778, slightly above the original paper&rsquo;s 70.1%.
+            The tuned 35-feature model (M4) reached 69.8% accuracy and an AUC of 0.774 while using 37.5% fewer features.
+          </p>
+        <img style="max-width: 640px;" src="images/truthseeker-results-table.png" alt="Table comparing the original paper with models M1 to M4 on accuracy, precision, recall, F1, and AUC; tuned models M3 (0.705 accuracy) and M4 (0.698) are highlighted">
+        <img style="max-width: 640px;" src="images/truthseeker-roc.png" alt="ROC curves for the four Random Forest models, all close together with AUCs from 0.760 to 0.779, well above the random-chance diagonal">
+
+        <h4>Conclusion</h4>
+          <p>
+            Hyperparameter tuning let our replication slightly outperform the original model, and the 35-feature model kept almost all of its predictive power.
+            A smaller model like this needs less data collection, storage, and computing power, which makes it more practical for real-world use.
+            Two limitations remain. Feature importance was computed on the test set, so the reduced models&rsquo; scores may be slightly optimistic,
+            and tweets about the same news statement could appear in both the training and test sets. Future work could group tweets by statement when splitting the data
+            and look at how the most useful features change over time.
+          </p>
+
+        <ul class="tags"></ul>
+
+      </article>
+
+      <script>
+      document.querySelectorAll('.project-detail').forEach(a => {
+        const ul = a.querySelector('.tags');
+        a.dataset.tags.split(',').forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t.trim();
+          ul.appendChild(li);
+        });
+      });
+      </script>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
