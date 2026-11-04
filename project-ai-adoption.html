@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects — Ellie Kuznetsova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="expect" href="#project-card" blocking="render">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="name"><a href="/">Ellie Kuznetsova</a></div>
+    <img src="photo.jpg" alt="Ellie Kuznetsova">
+
+    <div class="contacts">
+      <div><i class="fa-solid fa-location-dot"></i> San Diego, CA</div>
+      <div><i class="fa-solid fa-envelope"></i> <a href="mailto:ye.s.kuznetsova@gmail.com">ye.s.kuznetsova@gmail.com</a></div>
+      <div><i class="fa-brands fa-github"></i> <a href="https://github.com/elliekuznetsova" target="_blank">GitHub</a></div>
+      <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/elliekuznetsova/" target="_blank">LinkedIn</a></div>
+      <div><i class="fa-solid fa-file-lines"></i> <a href="CV_Ellie_Kuznetsova.pdf" target="_blank">CV</a>&nbsp;/&nbsp;<a href="Resume_Ellie_Kuznetsova.pdf" target="_blank">Resume</a></div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <nav class="navbar">
+      <a href="index.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="friendnet.html">Friendnet</a>
+    </nav>
+
+    <section>
+
+      <h2 class="breadcrumb-title">
+        <a href="projects.html">Projects</a>
+        <span aria-hidden="true">/</span>
+        <a href="project-ai-adoption.html" aria-current="page">Exploring Income and Education on Use of AI in a Nationally Representative Sample</a>
+      </h2>
+
+      <article id="project-card" class="card project-detail" style="view-transition-name: project-ai-adoption"
+        data-tags="Python, Pandas, NumPy, statsmodels, SciPy, matplotlib, Jupyter, Logistic regression, Linear regression, Nested model comparison, Odds ratios, Survey data, Pew Research Center, Data cleaning, AI adoption, Socioeconomic status">
+
+        <h3>Exploring Income and Education on Use of AI in a Nationally Representative Sample</h3>
+
+        <p class="meta">CSS 206 / COGS 209 Scientific Data Analysis and Statistical Learning, UC San Diego · Mar – Jun 2026</p>
+
+          <p>
+            AI chatbots like ChatGPT and Gemini are quickly becoming part of work, school, and daily life, and early studies link AI use to higher productivity and pay.
+            That raises a question: is AI adoption spread evenly across society, or does it follow existing divides in income and education?
+            As lead author, I worked with Shambhavi Mittal, Yaru (Irene) Su, and Marissa Chemotti to test whether income and education predict
+            AI chatbot use in a nationally representative sample of U.S. adults.
+          </p>
+
+        <h4>Data and methods</h4>
+          <p>
+            We used Wave 152 of the Pew Research Center&rsquo;s American Trends Panel, a nationally representative survey of U.S. adults collected in August 2024.
+            After removing refused and missing responses, our sample had 3,796 respondents, evenly split between people who had and had not used an AI chatbot.
+            Our main outcome was whether a respondent had ever used an AI chatbot, and our second outcome was how often they interact with AI.
+          </p>
+          <p>
+            We fit five nested models for each outcome, logistic regression for chatbot use and linear regression for frequency of use:
+            income only, education only, income and education together, their interaction, and a full model adding age, gender, and race as controls.
+            We compared the models using pseudo-R&sup2; or R&sup2;, AIC, and accuracy.
+          </p>
+
+        <h4>What predicts AI chatbot use</h4>
+          <p>
+            The full model fit best (pseudo-R&sup2; = 0.114, accuracy = 66.5%). Education was the strongest socioeconomic predictor:
+            college graduates had 2.5 times the odds of using an AI chatbot compared with people with a high school education or less (OR = 2.49).
+            Income mattered only at the top. Respondents earning $90,000 or more had 66&ndash;83% higher odds of use, while lower brackets did not differ significantly.
+            Age was the strongest predictor overall, with adults 65 and older having 87% lower odds of use than 18- to 29-year-olds.
+            Women had 30% lower odds of use than men.
+          </p>
+        <img style="max-width: 560px;" src="images/ai-adoption-odds-ratios.png" alt="Odds ratios with 95% confidence intervals for income, education, age, gender, and race, showing large positive effects for college education and the top income brackets and strong negative effects for older age groups">
+
+        <h4>Income and education together</h4>
+          <p>
+            Predicted adoption rose with both education and income, from 28&ndash;33% for people with a high school education or less in the lower income brackets
+            to 63&ndash;64% for college graduates earning $90,000 or more. Adding an income &times; education interaction did not improve model fit,
+            so the two work additively rather than amplifying each other. Frequency of AI use followed the same patterns, with education and age again showing the clearest effects.
+          </p>
+        <img src="images/ai-adoption-probability-grid.png" alt="Heatmap of predicted probability of AI chatbot adoption by household income and education level, rising from about 0.28 for high school or less to about 0.64 for college graduates in the top income brackets">
+
+        <h4>Conclusion</h4>
+          <p>
+            Our findings do not support an &ldquo;AI divide&rdquo; driven by income alone. Education appears to shape who starts using AI,
+            income matters mainly at higher levels, and age plays the largest role of all. Because the survey is cross-sectional and was collected in 2024,
+            early in mainstream AI adoption, these patterns show associations rather than causes and may change as AI tools become more widely available.
+          </p>
+
+        <ul class="tags"></ul>
+
+      </article>
+
+      <script>
+      document.querySelectorAll('.project-detail').forEach(a => {
+        const ul = a.querySelector('.tags');
+        a.dataset.tags.split(',').forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t.trim();
+          ul.appendChild(li);
+        });
+      });
+      </script>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
